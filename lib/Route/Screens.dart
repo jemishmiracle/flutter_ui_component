@@ -3,10 +3,16 @@ import 'package:flutter_ui_components/Screen/GridItem/BottomMenuPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ButtonsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ChipsGalleryPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/DialogsPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/FirebaseAdmobPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/GoogleMapPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/GridViewPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/ListViewPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewItem/BouncyList.dart';
+import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewItem/ExpandableList.dart';
+import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewItem/ReorderableList.dart';
+import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewItem/SelectionList.dart';
+import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewItem/SimpleList.dart';
+import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewItem/SlidableList.dart';
+import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewItem/SwappableList.dart';
+import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ProfilePage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ProgressBarsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/SearchBarPage.dart';
@@ -44,6 +50,17 @@ class Screens{
     GetPage(name: Routes.profileScreen, page: () => ProfilePage()),
     GetPage(name: Routes.searchBarScreen, page: () => SearchBarPage()),
     GetPage(name: Routes.googleMapScreen, page: () => GoogleMapPage()),
-    GetPage(name: Routes.firebaseAdmobScreen, page: () => FirebaseAdmobPage()),
+    GetPage(name: Routes.simpleListScreen, page: () => SimpleList()),
+    GetPage(name: Routes.bouncyListScreen, page: () => BouncyList()),
+    GetPage(name: Routes.slidableListScreen, page: () => SlidableList()),
+    GetPage(name: Routes.swappableListScreen, page: () => SwappableList()),
+    GetPage(name: Routes.reorderableListScreen, page: () => ReorderableList()),
+    GetPage(name: Routes.expandableListScreen, page: () => ExpandableList()),
+    GetPage(name: Routes.selectionListScreen, page: () => SelectionList()),
+    // GetPage(name: Routes.firebaseAdmobScreen, page: () => FirebaseAdmobPage()),
+    // GetPage(name: Routes.firebaseAdmobScreen, page: () => FirebaseAdmobPage()),
+    // GetPage(name: Routes.firebaseAdmobScreen, page: () => FirebaseAdmobPage()),
+    // GetPage(name: Routes.firebaseAdmobScreen, page: () => FirebaseAdmobPage()),
+    // GetPage(name: Routes.firebaseAdmobScreen, page: () => FirebaseAdmobPage()),
   ];
 }

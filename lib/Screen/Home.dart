@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_components/Constants/IconPath.dart';
+import 'package:flutter_ui_components/Constants/ImagePath.dart';
 import 'package:flutter_ui_components/Route/Routes.dart';
 import 'package:flutter_ui_components/Screen/GridItem/BottomAppBarPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/BottomMenuPage.dart';
@@ -21,38 +23,33 @@ import 'package:flutter_ui_components/Screen/GridItem/TextPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/WizardPage.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import 'GridItem/ListViewPage.dart';
+import 'GridItem/ListView/ListViewPage.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<gridViewData> data = [
-      gridViewData(img: 'assets/Image/bgImage1.png', title: 'ListView', icon: 'assets/icon/list.png'),
-      gridViewData(img: 'assets/Image/bgImage2.png', title: 'GridView', icon: 'assets/icon/grid.png'),
-      gridViewData(img: 'assets/Image/bgImage3.png', title: 'SliverAppbar', icon: 'assets/icon/app bar.png'),
-      gridViewData(img: 'assets/Image/bgImage4.png', title: 'Side Menu', icon: 'assets/icon/side menu.png'),
-      gridViewData(img: 'assets/Image/bgImage24.png', title: 'Bottom Menu', icon: 'assets/icon/bottom.png'),
-      gridViewData(img: 'assets/Image/bgImage6.png', title: 'Tabs', icon: 'assets/icon/tab.png'),
-      gridViewData(img: 'assets/Image/bgImage25.png', title: 'Wizard', icon: 'assets/icon/wizar.png'),
-      gridViewData(img: 'assets/Image/bgImage8.png', title: 'SplashScreen', icon: 'assets/icon/splash screen.png'),
-      gridViewData(img: 'assets/Image/bgImage26.png', title: 'Progress Bars', icon: 'assets/icon/proces bar.png'),
-      gridViewData(img: 'assets/Image/bgImage10.png', title: 'Text', icon: 'assets/icon/text.png'),
-      gridViewData(img: 'assets/Image/bgImage11.png', title: 'Text Fields', icon: 'assets/icon/text-filed.png'),
-      gridViewData(img: 'assets/Image/bgImage12.png', title: 'Buttons', icon: 'assets/icon/button.png'),
-      gridViewData(img: 'assets/Image/bgImage28.png', title: 'Chips Gallery', icon: 'assets/icon/gallery.png'),
-      gridViewData(img: 'assets/Image/bgImage14.png', title: 'Bottom AppBar', icon: 'assets/icon/bottom appbar.png'),
-      gridViewData(img: 'assets/Image/bgImage29.png', title: 'Dialogs', icon: 'assets/icon/dialogs.png'),
-      gridViewData(img: 'assets/Image/bgImage16.png', title: 'Social Login', icon: 'assets/icon/social login.png'),
-      gridViewData(img: 'assets/Image/bgImage17.png', title: 'Profile', icon: 'assets/icon/profile.png'),
-      gridViewData(img: 'assets/Image/bgImage18.png', title: 'SearchBar', icon: 'assets/icon/search.png'),
-      gridViewData(img: 'assets/Image/bgImage27.png', title: 'GoogleMap', icon: 'assets/icon/google-maps.png'),
-      gridViewData(img: 'assets/Image/bgImage20.png', title: 'Firebase Admob', icon: 'assets/icon/firebase.png'),
+      gridViewData(img: ImagePath.bgimge1, title: 'ListView', icon: IconPath.listIconImg),
+      gridViewData(img: ImagePath.bgimge2, title: 'GridView', icon: IconPath.gridIconImg),
+      gridViewData(img: ImagePath.bgimge3, title: 'SliverAppbar', icon: IconPath.appbarIconImg),
+      gridViewData(img: ImagePath.bgimge4, title: 'Side Menu', icon: IconPath.sideMenuIconImg),
+      gridViewData(img: ImagePath.bgimge5, title: 'Bottom Menu', icon: IconPath.bottomIconImg),
+      gridViewData(img: ImagePath.bgimge6, title: 'Tabs', icon: IconPath.tabIconImg),
+      gridViewData(img: ImagePath.bgimge7, title: 'Wizard', icon: IconPath.wizarIconImg),
+      gridViewData(img: ImagePath.bgimge8, title: 'SplashScreen', icon: IconPath.splashscreenIconImg),
+      gridViewData(img: ImagePath.bgimge9, title: 'Progress Bars', icon: IconPath.procesBarIconImg),
+      gridViewData(img: ImagePath.bgimge10, title: 'Text', icon: IconPath.textIconImg),
+      gridViewData(img: ImagePath.bgimge11, title: 'Text Fields', icon: IconPath.textFiledIconImg),
+      gridViewData(img: ImagePath.bgimge12, title: 'Buttons', icon: IconPath.buttonIconImg),
+      gridViewData(img: ImagePath.bgimge13, title: 'Chips Gallery', icon: IconPath.galleryIconImg),
+      gridViewData(img: ImagePath.bgimge14, title: 'Bottom AppBar', icon: IconPath.bottomAppbarIconImg),
+      gridViewData(img: ImagePath.bgimge15, title: 'Dialogs', icon: IconPath.dialogsIconImg),
+      gridViewData(img: ImagePath.bgimge16, title: 'Social Login', icon: IconPath.socialLoginIconImg),
+      gridViewData(img: ImagePath.bgimge17, title: 'Profile', icon: IconPath.profileIconImg),
+      gridViewData(img: ImagePath.bgimge18, title: 'SearchBar', icon: IconPath.searchIconImg),
+      gridViewData(img: ImagePath.bgimge19, title: 'GoogleMap', icon: IconPath.googleMapsIconImg),
+      gridViewData(img: ImagePath.bgimge20, title: 'Firebase Admob', icon: IconPath.firebaseIconImg),
     ];
-
-    // List<Widget> gridData = [
-    //   ListViewPage(),GridViewPage(),SliverAppbarPage(),SideMenuPage(),BottomMenuPage(),TabsPage(),WizardPage(),SplashScreenPage(),ProgressBarsPage(), TextPage(),
-    //   TextFieldsPage(),ButtonsPage(),ChipsGalleryPage(),BottomAppBarPage(),DialogsPage(),SocialLoginPage(),ProfilePage(),SearchBarPage(),GoogleMapPage(),FirebaseAdmobPage()
-    // ];
 
     return Scaffold(
       appBar: AppBar(
