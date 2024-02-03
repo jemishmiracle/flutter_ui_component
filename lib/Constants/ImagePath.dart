@@ -84,7 +84,7 @@ class ImagePath{
   static const travelImg8 = 'assets/Image/travel8.png';
   static const travelImg9 = 'assets/Image/travel9.png';
   static const travelImg10 = 'assets/Image/travel10.png';
-  // static const travelImg2 = 'assets/Image/travel2.png';
-  // static const travelImg2 = 'assets/Image/travel2.png';
+  static const lakeImg1 = 'assets/Image/lake 1.png';
+  static const lakeImg2 = 'assets/Image/lake 2.png';
   // static const travelImg2 = 'assets/Image/travel2.png';
 }

@@ -25,7 +25,7 @@ class ListViewPage extends StatelessWidget {
             children: [
               Image.asset(ImagePath.bgimg,fit: BoxFit.cover,height: double.infinity,),
               Container(
-                height: 70.h,
+                height: 72.h,
                 child:ListView.builder(
                   itemCount: listData.length,shrinkWrap: true,
                     itemBuilder: (context, index) {

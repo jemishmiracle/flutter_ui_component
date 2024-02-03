@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
               primaryColorDark:Colors.white,
               primaryColor: Color(0x85E98929),
               secondaryHeaderColor: Color(0xffE98929),
-              shadowColor : Color(0x95E98929)
+              shadowColor : Color(0x95E98929),
+                primaryColorLight: Color(0xffE98929)
             ),
             getPages:Screens.routes,
             initialRoute: Routes.homeScreen,

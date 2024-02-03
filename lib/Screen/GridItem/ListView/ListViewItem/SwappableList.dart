@@ -40,7 +40,7 @@ class SwappableList extends StatelessWidget {
                 return Padding(
                   padding: EdgeInsets.only(left: 2.w,right: 2.w,top: 5.w),
                   child: Container(
-                    height: 30.w,
+                    height: 23.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.horizontal(right: Radius.circular(1.w)),
@@ -48,7 +48,7 @@ class SwappableList extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Image.asset(itemData[index].img,fit: BoxFit.cover,height: 20.h,width: 20.w,),SizedBox(width: 2.w,),
+                        Image.asset(itemData[index].img,fit: BoxFit.cover,height: 23.h,width: 40.w,),SizedBox(width: 4.w,),
                         Column(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(itemData[index].title,style: TextStyle(fontWeight: FontWeight.bold),),

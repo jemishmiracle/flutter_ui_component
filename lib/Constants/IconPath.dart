@@ -33,6 +33,6 @@ class IconPath {
   static const geadsetIconImg = 'assets/icon/geadset.png';
   static const homeIconImg = 'assets/icon/home.png';
   static const chartIconImg = 'assets/icon/chat.png';
-  // static const iconImg = 'assets/icon/list.png';
+  static const laptopIconImg = 'assets/icon/laptop.png';
 
 }

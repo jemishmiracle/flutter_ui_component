@@ -52,7 +52,7 @@ class SlidableList extends StatelessWidget {
                       ),
                     ),
                     title:Text( senderData[index].title,style: TextStyle(color:Theme.of(context).secondaryHeaderColor,fontWeight: FontWeight.bold),),
-                    subtitle: Text(senderData[index].subject,style: TextStyle(color: Theme.of(context).secondaryHeaderColor),),
+                    subtitle: Text(senderData[index].subject,style: TextStyle(color: Theme.of(context).shadowColor),),
                   );
                 },),
             ),
