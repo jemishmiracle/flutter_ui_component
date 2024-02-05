@@ -9,7 +9,7 @@ import 'package:flutter_ui_components/Screen/GridItem/ChipsGalleryPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/DialogsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/FirebaseAdmobPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/GoogleMapPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/GridViewPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/GridView/GridViewPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ProfilePage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ProgressBarsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/SearchBarPage.dart';

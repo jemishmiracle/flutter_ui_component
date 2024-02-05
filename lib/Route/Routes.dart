@@ -1,3 +1,4 @@
+
 class Routes{
   static const homeScreen = '/homeScreen';
   static const listviewScreen = '/listviewScreen';
@@ -27,9 +28,9 @@ class Routes{
   static const reorderableListScreen = '/reorderableListScreen';
   static const expandableListScreen = '/expandableListScreen';
   static const selectionListScreen = '/selectionListScreen';
-  // static const firebaseAdmobScreen = '/homeScreen';
-  // static const firebaseAdmobScreen = '/homeScreen';
-  // static const firebaseAdmobScreen = '/homeScreen';
+  static const standardImageListScreen = '/standardImageListScreen';
+  static const wovenImageListScreen = '/wovenImageListScreen';
+  static const quiltedImageListScreen = '/quiltedImageListScreen';
   // static const firebaseAdmobScreen = '/homeScreen';
   // static const firebaseAdmobScreen = '/homeScreen';
   // static const firebaseAdmobScreen = '/homeScreen';
