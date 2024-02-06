@@ -5,7 +5,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:sizer/sizer.dart';
 
 class SlidableList extends StatelessWidget {
-  const SlidableList({super.key});
+   String title;
+   SlidableList({super.key,this.title = 'Slidable List'});
   
   @override
   Widget build(BuildContext context) {
@@ -32,8 +33,8 @@ class SlidableList extends StatelessWidget {
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
-        title: Text('Simple List',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
-        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: SafeArea(
         child: Stack(alignment: Alignment.topLeft,

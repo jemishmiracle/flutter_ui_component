@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_components/Constants/IconPath.dart';
 import 'package:flutter_ui_components/Constants/ImagePath.dart';
 import 'package:flutter_ui_components/Route/Routes.dart';
-import 'package:flutter_ui_components/Screen/GridItem/BottomAppBarPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/BottomMenuPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/ButtonsPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Bottom%20AppBar/BottomAppBarPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Bottom%20Menu/BottomMenuPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ChipsGalleryPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/DialogsPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/FirebaseAdmobPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Dailog/DialogsPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Firebase%20Admob/FirebaseAdmobPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/GoogleMapPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/GridView/GridViewPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/ProfilePage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Profile/ProfilePage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ProgressBarsPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/SearchBarPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/SideMenuPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/SliverAppbarPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/SocialLoginPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/SplashScreenPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/TabsPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/TextFieldsPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Search%20Bar/SearchBarPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Side%20Menu/SideMenuPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/SliverAppbar/SliverAppbarPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Social%20Login/SocialLoginPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Splash%20Screen/SplashScreenPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Tabs/TabsPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/TextField%20Gallery/TextFieldsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/TextPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/WizardPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Wizard/WizardPage.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'GridItem/ListView/ListViewPage.dart';
@@ -54,7 +54,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home',style: TextStyle(color: Colors.white,fontSize: 14.sp,fontWeight: FontWeight.w600),),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: SafeArea(
         child: Container(

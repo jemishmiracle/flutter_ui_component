@@ -3,10 +3,17 @@ import 'package:flutter_ui_components/Constants/ImagePath.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-class SwappableList extends StatelessWidget {
+class SwappableList extends StatefulWidget {
+  String title;
+  SwappableList({super.key,this.title = 'Swipeable List'});
+  @override
+  State<SwappableList> createState() => _SwappableListState();
+}
 
+class _SwappableListState extends State<SwappableList> {
   @override
   Widget build(BuildContext context) {
+
     List<SwipeData> itemData = [
       SwipeData(title: "Item 0 Sender", subject: "Subject: 0", img: ImagePath.catImg16),
       SwipeData(title: "Item 1 Sender", subject: "Subject: 1", img: ImagePath.catImg17),
@@ -24,41 +31,88 @@ class SwappableList extends StatelessWidget {
       SwipeData(title: "Item 13 Sender", subject: "Subject: 13", img: ImagePath.catImg29),
       SwipeData(title: "Item 14 Sender", subject: "Subject: 14", img: ImagePath.catImg30),
     ];
+
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
-        title: Text('Swipeable List',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
-        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(widget.title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: SafeArea(
         child: Container(
           child: ListView.builder(
               itemCount: itemData.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: EdgeInsets.only(left: 2.w,right: 2.w,top: 5.w),
-                  child: Container(
-                    height: 23.h,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.horizontal(right: Radius.circular(1.w)),
-                        color: Theme.of(context).shadowColor,
+                // return Padding(
+                //   padding: EdgeInsets.only(left: 2.w,right: 2.w,top: 5.w),
+                //   child: Container(
+                //     height: 23.h,
+                //     width: double.infinity,
+                //     decoration: BoxDecoration(
+                //         borderRadius: BorderRadius.horizontal(right: Radius.circular(1.w)),
+                //         color: Theme.of(context).shadowColor,
+                //     ),
+                //     child: Row(
+                //       children: [
+                //         Image.asset(itemData[index].img,fit: BoxFit.cover,height: 23.h,width: 40.w,),SizedBox(width: 4.w,),
+                //         Column(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.center,
+                //           children: [
+                //             Text(itemData[index].title,style: TextStyle(fontWeight: FontWeight.bold),),
+                //             Text(itemData[index].subject)
+                //           ],
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // );
+                return Dismissible(
+                    key:UniqueKey(),
+                    background: Container(
+                      height: 23.h,color: Theme.of(context).dividerColor,
+                      child: Center(
+                          child: Icon(Icons.delete)),
                     ),
-                    child: Row(
-                      children: [
-                        Image.asset(itemData[index].img,fit: BoxFit.cover,height: 23.h,width: 40.w,),SizedBox(width: 4.w,),
-                        Column(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.center,
+                    onDismissed: (direction) {
+                      String name = itemData[index].toString();
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text("You deleted ${name}"),
+                         action: SnackBarAction(
+                           onPressed: () {
+                             print("names[index] ${itemData[index].title}");
+                             itemData.insert(index, name as SwipeData);
+                             setState(() {});
+                           },
+                           label: "Undo",
+                         ),
+                      ));
+                      itemData.removeAt(index);
+                      setState(() {});
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 2.w,right: 2.w,top: 5.w),
+                      child: Container(
+                        height: 23.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.horizontal(right: Radius.circular(1.w)),
+                            color: Theme.of(context).shadowColor,
+                        ),
+                        child: Row(
                           children: [
-                            Text(itemData[index].title,style: TextStyle(fontWeight: FontWeight.bold),),
-                            Text(itemData[index].subject)
+                            Image.asset(itemData[index].img,fit: BoxFit.cover,height: 23.h,width: 40.w,),SizedBox(width: 4.w,),
+                            Column(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(itemData[index].title,style: TextStyle(fontWeight: FontWeight.bold),),
+                                Text(itemData[index].subject)
+                              ],
+                            ),
                           ],
                         ),
-                      ],
-                    ),
-                  ),
-                );
+                      ),
+                    ),);
               },
           ),
         ),

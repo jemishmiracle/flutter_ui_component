@@ -4,7 +4,8 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class ReorderableList extends StatelessWidget {
-  const ReorderableList({super.key});
+   String title;
+   ReorderableList({super.key,this.title = 'Reorderable List'});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +31,8 @@ class ReorderableList extends StatelessWidget {
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
-        title: Text('Reorderable List',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
-        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: SafeArea(
         child: Container(padding: EdgeInsets.symmetric(horizontal: 3.w),

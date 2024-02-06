@@ -5,6 +5,9 @@ import 'package:sizer/sizer.dart';
 import '../../../../Constants/ImagePath.dart';
 
 class SimpleList extends StatelessWidget {
+  String title;
+  SimpleList({super.key,this.title = 'Simple List'});
+
   List<ListData> listviewData = [
      ListData(title: "Map", img: IconPath.mapIconImg),
      ListData(title: "Album", img: IconPath.albumIconImg21),
@@ -28,8 +31,8 @@ class SimpleList extends StatelessWidget {
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
-        title: Text('Simple List',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
-        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: SafeArea(
         child: Container(

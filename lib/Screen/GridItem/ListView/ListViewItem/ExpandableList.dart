@@ -5,7 +5,8 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class ExpandableList extends StatefulWidget {
-  const ExpandableList({super.key});
+  String title;
+   ExpandableList({super.key,this.title = 'Expandable Demo'});
 
   @override
   State<ExpandableList> createState() => _ExpandableListState();
@@ -42,8 +43,8 @@ class _ExpandableListState extends State<ExpandableList> {
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
-        title: Text('Expandable Demo',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
-        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(widget.title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: SingleChildScrollView(
         child: Container(padding: EdgeInsets.all(3.w),

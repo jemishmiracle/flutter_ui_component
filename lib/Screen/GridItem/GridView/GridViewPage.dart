@@ -5,7 +5,8 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class GridViewPage extends StatelessWidget {
-  const GridViewPage({super.key});
+   String title;
+   GridViewPage({super.key,this.title = 'GridView'});
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +16,8 @@ class GridViewPage extends StatelessWidget {
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
-        title: Text('GridView',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
-        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: SafeArea(
         child: Container(padding: EdgeInsets.all(5.w),

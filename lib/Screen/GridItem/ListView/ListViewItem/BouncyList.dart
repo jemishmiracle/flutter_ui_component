@@ -4,7 +4,8 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class BouncyList extends StatelessWidget {
-  const BouncyList({super.key});
+   String title;
+   BouncyList({super.key,this.title = 'Bouncy List'});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +27,8 @@ class BouncyList extends StatelessWidget {
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
-        title: Text('Bouncy List',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
-        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: Container(
         child: ListView.builder(
@@ -36,24 +37,20 @@ class BouncyList extends StatelessWidget {
               return Container(
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 1.w),
-                  child: Stack(
-                    children: [
-                      Container(height: 17.h,width: double.infinity,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(lakeImg[index].img),
-                                fit: BoxFit.cover,
-                                colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.darken)
-                            )
-                        ),
-                        child: Column(mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(lakeImg[index].title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 15.sp),),
-                            Text("3.30 mins walking tour",style: TextStyle(fontSize: 7.sp,color: Theme.of(context).primaryColorDark),),
-                          ],
-                        ),
-                      ),
-                    ],
+                  child: Container(height: 17.h,width: double.infinity,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(lakeImg[index].img),
+                            fit: BoxFit.cover,
+                            colorFilter: ColorFilter.mode(Theme.of(context).bottomAppBarColor.withOpacity(0.6), BlendMode.darken)
+                        )
+                    ),
+                    child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(lakeImg[index].title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 15.sp),),
+                        Text("3.30 mins walking tour",style: TextStyle(fontSize: 7.sp,color: Theme.of(context).primaryColorDark),),
+                      ],
+                    ),
                   ),
                 ),
               );

@@ -5,7 +5,8 @@ import '../../../Constants/ImagePath.dart';
 import '../../../Route/Routes.dart';
 
 class ListViewPage extends StatelessWidget {
-  const ListViewPage({super.key});
+   String title;
+   ListViewPage({super.key,this.title = 'List'});
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +16,8 @@ class ListViewPage extends StatelessWidget {
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
-        title: Text('List',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
-        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: SafeArea(
         child: Container(
