@@ -6,7 +6,7 @@ import 'package:flutter_ui_components/Screen/GridItem/Bottom%20AppBar/BottomAppB
 import 'package:flutter_ui_components/Screen/GridItem/Bottom%20Menu/BottomMenuPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ChipsGalleryPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/Dailog/DialogsPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/DialogsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Firebase%20Admob/FirebaseAdmobPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/GoogleMapPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/GridView/GridViewPage.dart';

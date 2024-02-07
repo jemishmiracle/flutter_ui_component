@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DialogsPage extends StatelessWidget {
-  const DialogsPage({super.key});
+class SelectionControl extends StatelessWidget {
+  const SelectionControl({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,11 +1,20 @@
+import 'package:flutter_ui_components/Screen/GridItem/Bottom%20AppBar/BottomAppBarItem/SimpleBottomBar.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Bottom%20AppBar/BottomAppBarItem/TitledBottomBar.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Bottom%20AppBar/BottomAppBarPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Bottom%20Menu/BottomMenuItem/AnimatedBottomNavigation.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Bottom%20Menu/BottomMenuItem/MaterialBottomNavigation.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Bottom%20Menu/BottomMenuItem/SimpleBottomNavigation.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Bottom%20Menu/BottomMenuPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/DropdownButton.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/ElevatedButton.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/ElevatedButtonwithbasicproperty.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/FloatingActionbutton.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/IconButton.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/OutlineButton.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/SelectionControl.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ChipsGalleryPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/Dailog/DialogsPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/DialogsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/GoogleMapPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/GridView/GridViewItem/QuiltedImageList.dart';
 import 'package:flutter_ui_components/Screen/GridItem/GridView/GridViewItem/Standard%20Image%20List.dart';
@@ -19,8 +28,14 @@ import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewItem/Simp
 import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewItem/SlidableList.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewItem/SwappableList.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ListView/ListViewPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Profile/ProfileItem/ProfileWithSliverAppBar.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Profile/ProfileItem/ProfilewithTabs.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Profile/ProfileItem/SimpleProfile.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Profile/ProfilePage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ProgressBarsPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Search%20Bar/SearchBarItem/MaterialSearchBar.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Search%20Bar/SearchBarItem/SimpleSearchBar.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Search%20Bar/SearchBarItem/ToolbarSearchBar.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Search%20Bar/SearchBarPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Side%20Menu/SideMenuItem/CollapsibleNavigationDrawer.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Side%20Menu/SideMenuItem/CustomNavigationDrawer.dart';
@@ -40,6 +55,9 @@ import 'package:flutter_ui_components/Screen/GridItem/Tabs/TabItem/IconWithTextT
 import 'package:flutter_ui_components/Screen/GridItem/Tabs/TabItem/ScrollableTabBar.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Tabs/TabItem/SimpleTabBar.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Tabs/TabsPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/TextField%20Gallery/TextFieldItem/ColorFilledwithbarderTextField.dart';
+import 'package:flutter_ui_components/Screen/GridItem/TextField%20Gallery/TextFieldItem/TextFieldwithIcon.dart';
+import 'package:flutter_ui_components/Screen/GridItem/TextField%20Gallery/TextFieldItem/TextFiledwithbasicproperty.dart';
 import 'package:flutter_ui_components/Screen/GridItem/TextField%20Gallery/TextFieldsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/TextPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Wizard/WizardItem/AnimatedPageview.dart';
@@ -106,23 +124,23 @@ class Screens{
     GetPage(name: Routes.gradiantSplashScreen, page: () => GradiantSplashScreen()),
     GetPage(name: Routes.animatedSplashScreen, page: () => AnimatedSplashScreen()),
     GetPage(name: Routes.simpleSplashScreen, page: () => SimpleSplashScreen()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
-    // GetPage(name: Routes.animatedSliverAppBarScreen, page: () => AnimatedSliverAppBar()),
+    GetPage(name: Routes.simpleBottomBarScreen, page: () => SimpleBottomBar()),
+    GetPage(name: Routes.titledBottomBarScreen, page: () => TitledBottomBar()),
+    GetPage(name: Routes.elevatedButtonwithbasicpropertyScreen, page: () => ElevatedButtonwithbasicproperty()),
+    GetPage(name: Routes.elevatedButtonScreen, page: () => ElevatedButton()),
+    GetPage(name: Routes.outlineButtonScreen, page: () => OutlineButton()),
+    GetPage(name: Routes.floatingActionbuttonScreen, page: () => FloatingActionbutton()),
+    GetPage(name: Routes.iconButtonScreen, page: () => IconButton()),
+    GetPage(name: Routes.dropdownButtonScreen, page: () => DropdownButton()),
+    GetPage(name: Routes.selectionControlScreen, page: () => SelectionControl()),
+    GetPage(name: Routes.simpleProfileScreen, page: () => SimpleProfile()),
+    GetPage(name: Routes.profilewithTabsScreen, page: () => ProfilewithTabs()),
+    GetPage(name: Routes.profileWithSliverAppBarScreen, page: () => ProfileWithSliverAppBar()),
+    GetPage(name: Routes.simpleSearchBarScreen, page: () => SimpleSearchBar()),
+    GetPage(name: Routes.materialSearchBarScreen, page: () => MaterialSearchBar()),
+    GetPage(name: Routes.toolbarSearchBarScreen, page: () => ToolbarSearchBar()),
+    GetPage(name: Routes.textFiledwithbasicpropertyScreen, page: () => TextFiledwithbasicproperty()),
+    GetPage(name: Routes.textFieldwithIconScreen, page: () => TextFieldwithIcon()),
+    GetPage(name: Routes.colorFilledwithbarderTextFieldScreen, page: () => ColorFilledwithbarderTextField()),
   ];
 }

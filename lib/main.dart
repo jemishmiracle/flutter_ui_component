@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
                 bottomAppBarColor: Colors.black,
               cardColor: Colors.grey,
               dividerColor: Colors.red,
+              disabledColor: Colors.blue,
             ),
             getPages:Screens.routes,
             initialRoute: Routes.homeScreen,
