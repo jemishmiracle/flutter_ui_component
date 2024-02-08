@@ -1,4 +1,3 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_components/Constants/ImagePath.dart';
@@ -124,19 +123,45 @@ class _DialogsPageState extends State<DialogsPage> {
 
   showAlert(BuildContext context) {
     String content =
-        "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.";
+        "Let Google help apps determine location.""\n"
+        " This means sending anonymous location ""\n"
+        "data to Google, even when no apps are "'\n'
+        "running.";
     AlertDialog alert = AlertDialog(
-      title: Text("Use Google's location service?"),
-      content:  Text(content,maxLines: 4,),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(1.w)
+      ),
+      title: Text("Use Google's location service?",style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w600),),
+      content:  Container(
+          child: Text(content,maxLines: 4,style: TextStyle(fontSize: 10.sp),)),
       actions: [
-        ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).secondaryHeaderColor),
-            onPressed: () => Get.back(),
-            child:  Text('DISAGREE',style: TextStyle(color: Theme.of(context).primaryColorDark),)),
-        ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).secondaryHeaderColor),
-            onPressed: () => Get.back(),
-            child:  Text('AGREE',style: TextStyle(color: Theme.of(context).primaryColorDark),)),
+        Row(mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            InkWell(onTap: () => Get.back(),
+              child: Container(
+                height: 5.h,width: 22.w,
+                decoration: BoxDecoration(
+                    color: Theme.of(context).secondaryHeaderColor,
+                    borderRadius: BorderRadius.circular(1.w)
+                ),
+                child: Center(
+                    child: Text('DISAGREE',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 10.sp),)),
+              ),
+            ),SizedBox(width: 2.w,),
+            InkWell(onTap: () => Get.back(),
+              child: Container(
+                height: 5.h,width: 22.w,
+                decoration: BoxDecoration(
+                    color: Theme.of(context).secondaryHeaderColor,
+                    borderRadius: BorderRadius.circular(1.w)
+                ),
+                child: Center(
+                    child: Text('AGREE',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 10.sp),)),
+              ),
+            ),
+          ],
+        ),
+
       ],
       actionsAlignment:MainAxisAlignment.center,
     );
@@ -149,7 +174,11 @@ class _DialogsPageState extends State<DialogsPage> {
 
   showAlertButton(BuildContext context) {
     String content =
-        "Please select your favorite Fruit from the list below. Your selection will be used to customize the suggested list of eateries in your area.";
+        " Please select your favorite Fruit ""\n"
+        "from the list below. Your selection ""\n"
+        "   will be used to customize the ""\n"
+        "  suggested list of eateries in your""\n"
+        "            area.";
     showDialog(
         context: context,
         builder: (context) {
@@ -223,22 +252,90 @@ class _DialogsPageState extends State<DialogsPage> {
 
   showMaterialAlert(BuildContext context){
     AlertDialog alert = AlertDialog(
-      title: Text("Discard draft?"),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(1.w)
+      ),
+      title: Text("Discard draft?",style: TextStyle(fontSize: 11.sp),),
       actions: [
-        ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).secondaryHeaderColor),
-            onPressed: () => Get.back(),
-            child:  Text('CANCEL',style: TextStyle(color: Theme.of(context).primaryColorDark),)),
-        ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).secondaryHeaderColor),
-            onPressed: () => Get.back(),
-            child:  Text('DISCARD',style: TextStyle(color: Theme.of(context).primaryColorDark),)),
+        Row(mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            InkWell(onTap: () => Get.back(),
+              child: Container(
+                height: 5.h,width: 22.w,
+                decoration: BoxDecoration(
+                    color: Theme.of(context).secondaryHeaderColor,
+                    borderRadius: BorderRadius.circular(1.w)
+                ),
+                child: Center(
+                    child: Text('CANCEL',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 10.sp),)),
+              ),
+            ),SizedBox(width: 2.w,),
+            InkWell(onTap: () => Get.back(),
+              child: Container(
+                height: 5.h,width: 22.w,
+                decoration: BoxDecoration(
+                    color: Theme.of(context).secondaryHeaderColor,
+                    borderRadius: BorderRadius.circular(1.w)
+                ),
+                child: Center(
+                    child: Text('DISCARD',style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 10.sp),)),
+              ),
+            ),
+          ],
+        ),
       ],
       actionsAlignment:MainAxisAlignment.center,
     );
     showDialog(
       context: context,
-      builder: (context) {return alert;},
+      builder: (context) {
+        // return Padding(
+        //   padding: EdgeInsets.symmetric(horizontal: 5.w),
+        //   child: Dialog(
+        //     backgroundColor: Colors.transparent,
+        //     child: Container(
+        //       height: 18.h,padding: EdgeInsets.only(left: 5.w,top: 4.w,right: 2.w),
+        //       decoration: BoxDecoration(
+        //         color: Theme.of(context).primaryColorDark,
+        //         borderRadius: BorderRadius.circular(1.w),
+        //       ),
+        //       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+        //         children: [
+        //           Text("Discard draft?"),
+        //           SizedBox(height: 5.h,),
+        //           Row(mainAxisAlignment: MainAxisAlignment.end,
+        //             children: [
+        //               InkWell(onTap: () => Get.back(),
+        //                 child: Container(
+        //                   height: 5.h,width: 22.w,
+        //                   decoration: BoxDecoration(
+        //                       color: Theme.of(context).backgroundColor,
+        //                       borderRadius: BorderRadius.circular(1.w)
+        //                   ),
+        //                   child: Center(
+        //                       child: Text('CANCEL',style: TextStyle(color: Theme.of(context).primaryColorDark),)),
+        //                 ),
+        //               ),SizedBox(width: 1.w,),
+        //               InkWell(onTap: () => Get.back(),
+        //                 child: Container(
+        //                   height: 5.h,width: 22.w,
+        //                   decoration: BoxDecoration(
+        //                       color: Theme.of(context).backgroundColor,
+        //                       borderRadius: BorderRadius.circular(1.w)
+        //                   ),
+        //                   child: Center(
+        //                       child: Text('DISCARD',style: TextStyle(color: Theme.of(context).primaryColorDark),)),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //   ),
+        // );
+        return alert;
+        },
     );
 
   }
@@ -255,28 +352,90 @@ class _DialogsPageState extends State<DialogsPage> {
         context: context,
         initialDate: DateTime.now(),
         firstDate: DateTime(1970),
-        lastDate: DateTime(2030)
+        lastDate: DateTime(2030),
+       builder: (context, child) {
+         return Theme(
+           data: Theme.of(context),
+           child: child!,
+         );
+       },
     );
   }
 
-  showCustomDialogs(BuildContext context) {
-
-  }
-   showAlertinfo(BuildContext context) {
-    AwesomeDialog(
+  showCustomDialogs(BuildContext context){
+    showDialog(
         context: context,
-        animType: AnimType.scale,
-        dialogType: DialogType.info,
-        dismissOnBackKeyPress: false,
-        dismissOnTouchOutside: false,
-        btnOkOnPress: () {},
-        title: 'This is INFO',
-        desc: 'this is your description text',
-        // titleTextStyle: GoogleFonts.nunitoSans(
-        //     fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
-        // descTextStyle: GoogleFonts.nunitoSans(
-        //     fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black)
-    )
-      ..show();
+        builder: (BuildContext context) {
+          final size = MediaQuery.of(context).size;
+          return Padding(
+            padding: EdgeInsets.only(top: 20.w),
+            child: Dialog(
+                backgroundColor: Colors.transparent, //must have
+                elevation: 0,
+                child: SizedBox(
+                  height: size.height * .6,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                          top: (size.height * .2) / 2,
+                          child: Container(
+                            height: 33.h,
+                            width: 75.w,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(3.w),
+                              color: Theme.of(context).primaryColorDark,
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 15.w,right: 4.w,left: 4.w),
+                              child: Column(
+                                children: [
+                                  Text('Confirmation',style: TextStyle(color: Theme.of(context).backgroundColor,fontWeight: FontWeight.w600,fontSize: 18.sp),),
+                                  SizedBox(height: 2.w,),
+                                  Text(
+                                      'Your Application related issue will be '"\n"
+                                          '                submit at out server'
+                                  ),
+                                  SizedBox(height: 7.w,),
+                                  Align(alignment: Alignment.bottomRight,
+                                    child: InkWell(onTap: () => Get.back(),
+                                      child: Container(
+                                        height: 5.h,width: 22.w,
+                                        decoration: BoxDecoration(
+                                          color: Theme.of(context).backgroundColor,
+                                            borderRadius: BorderRadius.circular(4.w)
+                                        ),
+                                        child: Center(
+                                            child: Text('Submit',style: TextStyle(color: Theme.of(context).primaryColorDark),)),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )),
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: Padding(
+                          padding:  EdgeInsets.only(top: 5.w),
+                          child: Container(
+                            height: 14.h,
+                            width: 30.w,
+                            decoration: ShapeDecoration(
+                              shape: CircleBorder(),
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  ImagePath.dialogImg
+                                ),
+                                fit: BoxFit.cover
+                              )
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
+          );
+        });
   }
 }
