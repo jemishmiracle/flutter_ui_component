@@ -34,5 +34,27 @@ class IconPath {
   static const homeIconImg = 'assets/icon/home.png';
   static const chartIconImg = 'assets/icon/chat.png';
   static const laptopIconImg = 'assets/icon/laptop.png';
-
+  static const sideMenuIconImg1 = 'assets/icon/sidemenuIcon1.png';
+  static const sideMenuIconImg2 = 'assets/icon/sidemenuIcon2.png';
+  static const sideMenuIconImg3 = 'assets/icon/sidemenuIcon3.png';
+  static const sideMenuIconImg4 = 'assets/icon/sidemenuIcon4.png';
+  static const sideMenuIconImg5 = 'assets/icon/sidemenuIcon5.png';
+  static const sideMenuIconImg6 = 'assets/icon/sidemenuIcon6.png';
+  static const sideMenuIconImg7 = 'assets/icon/sidemenuIcon7.png';
+  static const sideMenuIconImg8 = 'assets/icon/sidemenuIcon8.png';
+  static const sideMenuIconImg9 = 'assets/icon/sidemenuIcon9.png';
+  static const sideMenuIconImg10 = 'assets/icon/sidemenuIcon10.png';
+  static const sideMenuIconImg11 = 'assets/icon/sidemenuIcon11.png';
+  static const sideMenuIconImg12 = 'assets/icon/sidemenuIcon12.png';
+  static const sideMenuIconImg13 = 'assets/icon/sidemenuIcon13.png';
+  static const sideMenuIconImg14 = 'assets/icon/sidemenuIcon14.png';
+  static const tabIconImg1 = 'assets/icon/tabIcon1.png';
+  static const tabIconImg2 = 'assets/icon/tabIcon2.png';
+  static const tabIconImg3 = 'assets/icon/tabIcon3.png';
+  static const tabIconImg4 = 'assets/icon/tabIcon4.png';
+  static const tabIconImg5 = 'assets/icon/tabIcon5.png';
+  static const tabIconImg6 = 'assets/icon/tabIcon6.png';
+  static const tabIconImg7 = 'assets/icon/tabIcon7.png';
+  static const tabIconImg8 = 'assets/icon/tabIcon8.png';
+  static const tabIconImg9 = 'assets/icon/tabIcon9.png';
 }

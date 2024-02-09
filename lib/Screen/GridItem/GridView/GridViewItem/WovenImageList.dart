@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_ui_components/Constants/ImagePath.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -11,8 +12,8 @@ class WovenImageList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List imageData = [
-      ImagePath.bgimge1, ImagePath.bgimge2,ImagePath.bgimge3, ImagePath.bgimge4, ImagePath.bgimge5, ImagePath.bgimge6, ImagePath.bgimge7, ImagePath.bgimge8, ImagePath.bgimge9, ImagePath.bgimge10,
-      ImagePath.bgimge11, ImagePath.bgimge12, ImagePath.bgimge13, ImagePath.bgimge14, ImagePath.bgimge15, ImagePath.bgimge16, ImagePath.bgimge17, ImagePath.bgimge18, ImagePath.bgimge19, ImagePath.bgimge20,];
+      ImagePath.homeImg1, ImagePath.homeImg11,ImagePath.homeImg2, ImagePath.homeImg12, ImagePath.homeImg3, ImagePath.homeImg13, ImagePath.homeImg4, ImagePath.homeImg14, ImagePath.homeImg5, ImagePath.homeImg15,
+      ImagePath.homeImg6, ImagePath.homeImg16, ImagePath.homeImg7, ImagePath.homeImg17, ImagePath.homeImg8, ImagePath.homeImg18, ImagePath.homeImg9, ImagePath.homeImg19, ImagePath.homeImg10, ImagePath.homeImg20,];
 
     return Scaffold(
       appBar: AppBar(
@@ -27,20 +28,27 @@ class WovenImageList extends StatelessWidget {
           children:[
             Image.asset(ImagePath.bgimg,fit: BoxFit.cover,height: double.infinity,),
             GridView.builder(
-              shrinkWrap: true,itemCount: imageData.length,padding: EdgeInsets.symmetric(horizontal: 5.w),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-               crossAxisSpacing: 8,
+              shrinkWrap: true,itemCount: imageData.length,padding: EdgeInsets.all(5.w),
+              gridDelegate: SliverWovenGridDelegate.count(
+                  pattern: [
+                        WovenGridTile(1),
+                        WovenGridTile(
+                          5 / 7,
+                          crossAxisRatio: 0.9,
+                          alignment: AlignmentDirectional.centerEnd,
+                        ),
+                      ],
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 2.w,
+                    crossAxisSpacing: 10.w,
               ),
               itemBuilder: (context, index) {
-                return Padding(
-                  padding:  EdgeInsets.all(2.w),
-                  child: Container(
-                    child:Image.asset(imageData[index],) ,
-                  ),
+                return Container(
+                  child:Image.asset(imageData[index],fit: BoxFit.cover,) ,
                 );
               },
-            ),],
+            ),
+          ],
         ),
       ),
     );

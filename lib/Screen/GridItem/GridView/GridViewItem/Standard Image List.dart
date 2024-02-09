@@ -10,8 +10,8 @@ class StandardImageList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List imageData = [
-      ImagePath.bgimge1, ImagePath.bgimge2,ImagePath.bgimge3, ImagePath.bgimge4, ImagePath.bgimge5, ImagePath.bgimge6, ImagePath.bgimge7, ImagePath.bgimge8, ImagePath.bgimge9, ImagePath.bgimge10,
-      ImagePath.bgimge11, ImagePath.bgimge12, ImagePath.bgimge13, ImagePath.bgimge14, ImagePath.bgimge15, ImagePath.bgimge16, ImagePath.bgimge17, ImagePath.bgimge18, ImagePath.bgimge19, ImagePath.bgimge20,];
+      ImagePath.cityImg1, ImagePath.cityImg2,ImagePath.cityImg3, ImagePath.cityImg4, ImagePath.cityImg5, ImagePath.cityImg6, ImagePath.cityImg7, ImagePath.cityImg8, ImagePath.cityImg9, ImagePath.cityImg10,
+      ImagePath.cityImg11, ImagePath.cityImg12, ImagePath.cityImg13, ImagePath.cityImg14, ImagePath.cityImg15, ImagePath.cityImg16, ImagePath.cityImg17, ImagePath.cityImg18, ImagePath.cityImg19, ImagePath.cityImg20,];
 
     return Scaffold(
       appBar: AppBar(

@@ -62,7 +62,7 @@ class SimpleSliverAppBar extends StatelessWidget {
            icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
          flexibleSpace: FlexibleSpaceBar(
            title: Text(title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
-           background: Image.asset(ImagePath.bgimge5,fit: BoxFit.cover,),
+           background: Image.asset(ImagePath.cityImg,fit: BoxFit.cover,),
          ),
          snap: true,pinned: true,floating: true,
         ),],

@@ -28,36 +28,27 @@ class _ScrollableTabBarState extends State<ScrollableTabBar> with SingleTickerPr
           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
         title: Text(widget.title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
         backgroundColor: Theme.of(context).secondaryHeaderColor,
+        bottom: TabBar(tabs: [Tab(text: 'First',), Tab(text: 'Second',),Tab(text: 'Third',),Tab(text: 'Four',),Tab(text: 'Five',),Tab(text: 'Six',),Tab(text: 'Seven',),Tab(text: 'Eight',),Tab(text: 'Nine',)],
+          controller: _tabController,isScrollable: true,tabAlignment: TabAlignment.start,
+          indicatorColor: Theme.of(context).primaryColor,
+          labelColor: Theme.of(context).bottomAppBarColor,
+          unselectedLabelColor:Theme.of(context).primaryColorDark,
+          indicatorSize: TabBarIndicatorSize.tab,
+        ),
       ),
-      backgroundColor:Theme.of(context).secondaryHeaderColor,body: Container(
-      child: Column(
+      body: TabBarView(controller: _tabController,
         children: [
-          TabBar(tabs: [Tab(text: 'First',), Tab(text: 'Second',),Tab(text: 'Third',),Tab(text: 'Four',),Tab(text: 'Five',),Tab(text: 'Six',),Tab(text: 'Seven',),Tab(text: 'Eight',),Tab(text: 'Nine',)],
-            controller: _tabController,isScrollable: true,
-            indicatorColor: Theme.of(context).primaryColor,
-            labelColor: Theme.of(context).bottomAppBarColor,
-            unselectedLabelColor:Theme.of(context).primaryColorDark,
-            indicatorSize: TabBarIndicatorSize.tab,
-          ),
-          Expanded(
-            child: TabBarView(controller: _tabController,
-              children: [
-               scrollTabs(ImagePath.tabImg4, 'First'),
-               scrollTabs(ImagePath.tabImg5, 'Second'),
-               scrollTabs(ImagePath.tabImg6, 'Third'),
-               scrollTabs(ImagePath.tabImg7, 'Four'),
-               scrollTabs(ImagePath.tabImg8, 'Five'),
-               scrollTabs(ImagePath.tabImg9, 'Six'),
-               scrollTabs(ImagePath.tabImg10, 'Seven'),
-               scrollTabs(ImagePath.tabImg11, 'Eight'),
-               scrollTabs(ImagePath.tabImg12, 'Nine'),
-              ],
-            ),
-          )
+          scrollTabs(ImagePath.tabImg4, 'First'),
+          scrollTabs(ImagePath.tabImg5, 'Second'),
+          scrollTabs(ImagePath.tabImg6, 'Third'),
+          scrollTabs(ImagePath.tabImg7, 'Four'),
+          scrollTabs(ImagePath.tabImg8, 'Five'),
+          scrollTabs(ImagePath.tabImg9, 'Six'),
+          scrollTabs(ImagePath.tabImg10, 'Seven'),
+          scrollTabs(ImagePath.tabImg11, 'Eight'),
+          scrollTabs(ImagePath.tabImg12, 'Nine'),
         ],
       ),
-    ),
-
     );
   }
 

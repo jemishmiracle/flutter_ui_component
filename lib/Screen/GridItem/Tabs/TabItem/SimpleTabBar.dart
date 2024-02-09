@@ -29,29 +29,20 @@ class _SimpleTabBarState extends State<SimpleTabBar> with SingleTickerProviderSt
           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
         title: Text(widget.title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
         backgroundColor: Theme.of(context).secondaryHeaderColor,
-      ),
-      backgroundColor:Theme.of(context).secondaryHeaderColor,
-      body: Container(
-        child: Column(
-          children: [
-            TabBar(tabs: [Tab(text: 'First',), Tab(text: 'Second',),Tab(text: 'Third',)],
-              controller: _tabController,
-              indicatorColor: Theme.of(context).primaryColor,
-              labelColor: Theme.of(context).bottomAppBarColor,
-              unselectedLabelColor:Theme.of(context).primaryColorDark,
-              indicatorSize: TabBarIndicatorSize.tab,
-            ),
-            Expanded(
-              child: TabBarView(controller: _tabController,
-                children: [
-                  tabs(ImagePath.tabImg1, "First"),
-                  tabs(ImagePath.tabImg2, "Second"),
-                  tabs(ImagePath.tabImg3, "Third"),
-                ],
-              ),
-            )
-          ],
+        bottom: TabBar(tabs: [Tab(text: 'First',), Tab(text: 'Second',),Tab(text: 'Third',)],
+          controller: _tabController,
+          indicatorColor: Theme.of(context).primaryColor,
+          labelColor: Theme.of(context).bottomAppBarColor,
+          unselectedLabelColor:Theme.of(context).primaryColorDark,
+          indicatorSize: TabBarIndicatorSize.tab,
         ),
+      ),
+      body: TabBarView(controller: _tabController,
+        children: [
+          tabs(ImagePath.tabImg1, "First"),
+          tabs(ImagePath.tabImg2, "Second"),
+          tabs(ImagePath.tabImg3, "Third"),
+        ],
       ),
     );
   }
