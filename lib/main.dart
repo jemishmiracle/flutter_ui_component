@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
                 bottomAppBarColor: Colors.black,
               cardColor: Colors.grey,
               dividerColor: Colors.red,
+              focusColor: Color(0xff0000FF),
               disabledColor: Colors.blue,
               backgroundColor: Colors.green,
               dialogBackgroundColor: Colors.purple,canvasColor: Color(0xff386171),

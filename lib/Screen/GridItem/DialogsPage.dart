@@ -289,51 +289,6 @@ class _DialogsPageState extends State<DialogsPage> {
     showDialog(
       context: context,
       builder: (context) {
-        // return Padding(
-        //   padding: EdgeInsets.symmetric(horizontal: 5.w),
-        //   child: Dialog(
-        //     backgroundColor: Colors.transparent,
-        //     child: Container(
-        //       height: 18.h,padding: EdgeInsets.only(left: 5.w,top: 4.w,right: 2.w),
-        //       decoration: BoxDecoration(
-        //         color: Theme.of(context).primaryColorDark,
-        //         borderRadius: BorderRadius.circular(1.w),
-        //       ),
-        //       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-        //         children: [
-        //           Text("Discard draft?"),
-        //           SizedBox(height: 5.h,),
-        //           Row(mainAxisAlignment: MainAxisAlignment.end,
-        //             children: [
-        //               InkWell(onTap: () => Get.back(),
-        //                 child: Container(
-        //                   height: 5.h,width: 22.w,
-        //                   decoration: BoxDecoration(
-        //                       color: Theme.of(context).backgroundColor,
-        //                       borderRadius: BorderRadius.circular(1.w)
-        //                   ),
-        //                   child: Center(
-        //                       child: Text('CANCEL',style: TextStyle(color: Theme.of(context).primaryColorDark),)),
-        //                 ),
-        //               ),SizedBox(width: 1.w,),
-        //               InkWell(onTap: () => Get.back(),
-        //                 child: Container(
-        //                   height: 5.h,width: 22.w,
-        //                   decoration: BoxDecoration(
-        //                       color: Theme.of(context).backgroundColor,
-        //                       borderRadius: BorderRadius.circular(1.w)
-        //                   ),
-        //                   child: Center(
-        //                       child: Text('DISCARD',style: TextStyle(color: Theme.of(context).primaryColorDark),)),
-        //                 ),
-        //               ),
-        //             ],
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //   ),
-        // );
         return alert;
         },
     );

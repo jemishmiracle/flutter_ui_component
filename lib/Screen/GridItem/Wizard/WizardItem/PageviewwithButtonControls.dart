@@ -30,51 +30,39 @@ class _PageviewwithButtonControlsState extends State<PageviewwithButtonControls>
         backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: Center(
-        child: CarouselSlider.builder(
-          itemCount: pageList.length,
-          carouselController: carouselController,
-          itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
-          // Container(
-          //   width: double.infinity,
-          //   decoration: BoxDecoration(
-          //     image: DecorationImage(
-          //       image: AssetImage(pageList[itemIndex]), fit: BoxFit.cover,
-          //     ),
-          //     borderRadius: BorderRadius.circular(2.w),
-          //   ),
-          //   child: button(),
-          // ),
-          Stack(
-            children: [
-              Image.asset(pageList[itemIndex],fit: BoxFit.cover,width: double.infinity,),
-              button()
-            ],
-          ),
-          options:  CarouselOptions(
-            height: 55.h,enableInfiniteScroll: true,
-            pageSnapping: true,
-            initialPage: 0,
-            onPageChanged: (index, reason) {
-              setState(() {
-                currentIndex = index;
-              });
-            },
-          ),
+        child: Stack(alignment: Alignment.center,
+          children: [
+            CarouselSlider(
+                carouselController: carouselController,
+                items: pageList.map((e) =>
+                  Image.asset(e,fit: BoxFit.cover,width: double.infinity,)).toList(),
+                options: CarouselOptions(
+                  height: 55.h,
+                  enableInfiniteScroll: true,
+                  pageSnapping: true,
+                  initialPage: 0,
+                  viewportFraction: 1
+                )
+            ),
+           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             children: [
+               IconButton(
+                 onPressed: () {
+                   carouselController.previousPage();
+                 },
+                 icon: Icon(Icons.arrow_back_ios,color: Theme.of(context).primaryColorDark,),
+               ),
+               IconButton(
+                 onPressed: () {
+                   carouselController.nextPage();
+                 },
+                 icon: Icon(Icons.arrow_forward_ios,color: Theme.of(context).primaryColorDark,),
+               ),
+             ],
+           )
+          ],
         ),
       ),
-    );
-  }
-
-  Widget button(){
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-            onPressed: () => carouselController.previousPage(duration: Duration(milliseconds: 500)),
-            icon: Icon(Icons.arrow_back_ios,color: Theme.of(context).bottomAppBarColor,size: 5.w,)),
-        IconButton(
-            onPressed: () => carouselController.nextPage(duration: Duration(milliseconds: 500)),
-            icon: Icon(Icons.arrow_forward_ios,color: Theme.of(context).bottomAppBarColor,size: 5.w,)),
-      ],
     );
   }
 }

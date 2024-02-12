@@ -21,9 +21,6 @@ class _ExpandableListState extends State<ExpandableList> {
   ];
   bool status = false;
   bool lakeStatus = false;
-  bool checkStatus = false;
-  String text = "EXPAND";
-  String text1 = "COLLAPSE";
   String  subtext =
       " Lake Pichola, situated in Udaipur city in the Indian state of "
       "Rajasthan, is an artificial fresh water lake, created in the "
@@ -52,14 +49,7 @@ class _ExpandableListState extends State<ExpandableList> {
             children: [
               lakePichola1(ImagePath.lakeImg1,"Lake Pichola", subtext, Icons.keyboard_arrow_up_outlined, Icons.keyboard_arrow_down_outlined,),
               SizedBox(height: 2.h,),
-              lakePichola(
-                "Lake Pichola",
-                "Lake Pichola",
-                ImagePath.lakeImg2,
-                18.h,
-                "Different views of Lake Pichola",
-                text,
-              ),
+              lakePichola("Lake Pichola"),
               SizedBox(height: 2.h,),
               subList("Sublist", Icons.keyboard_arrow_up_outlined, Icons.keyboard_arrow_down_outlined, sublist,),
             ],
@@ -69,8 +59,8 @@ class _ExpandableListState extends State<ExpandableList> {
     );
   }
 
-  Widget lakePichola(String title,String subtext,String image,double imageSize,String subtext1,String subtext2){
-    return Container(height:42.h,
+  Widget lakePichola(String title,){
+    return Container(height:status ? 49.h : 37.h,
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColorDark,
         borderRadius: BorderRadius.circular(1.w),
@@ -78,19 +68,25 @@ class _ExpandableListState extends State<ExpandableList> {
       ),
       child:Column(crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(padding: EdgeInsets.only(left:2.w),
+          Padding(padding: EdgeInsets.only(left: 3.w),
             child: Text(title,style: TextStyle(color: Theme.of(context).shadowColor,fontSize: 40.sp),),
           ),
-          Padding(padding: EdgeInsets.only(left:2.w),
-            child: Text(subtext,style: TextStyle(color: Theme.of(context).primaryColor),),
-          ),
-          Image.asset(image,fit: BoxFit.cover,height: imageSize,width: double.infinity,),
-          Padding(padding: EdgeInsets.only(left:2.w),
-            child: Text(subtext1,style: TextStyle(color: Theme.of(context).secondaryHeaderColor),),
-          ),
-          Padding(
-            padding:EdgeInsets.only(left:3.w,top:3.w),
-            child: Text(subtext2,style: TextStyle(color: Theme.of(context).secondaryHeaderColor),),
+          status ? Padding(padding: EdgeInsets.only(bottom: 2.w,left: 2.w),
+            child: Text(status ? "Lake Pichola" : "",style: TextStyle(color: Theme.of(context).primaryColor),),)
+              : Container(),
+          Image.asset(status ? ImagePath.lakeImg3 : ImagePath.lakeImg2 ,fit: BoxFit.fill,height: status ? 22.h : 18.h,width: double.infinity,),
+          status ? Padding(padding: EdgeInsets.only(top: 2.w,left: 2.w),
+            child: Text(status ? "Different views of Lake Pichola" : "",style: TextStyle(color: Theme.of(context).secondaryHeaderColor),),)
+              : Container(),
+          Padding(padding: EdgeInsets.only(left: 2.w),
+            child: TextButton(
+              child: Text(status ? "COLLAPSE" : "EXPAND",style: TextStyle(color: Theme.of(context).secondaryHeaderColor),),
+              onPressed: () {
+                setState(() {
+                  status = !status;
+                });
+              },
+            ),
           ),
         ],
       ),

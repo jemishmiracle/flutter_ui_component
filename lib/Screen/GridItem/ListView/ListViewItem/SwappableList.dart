@@ -76,13 +76,13 @@ class _SwappableListState extends State<SwappableList> {
                           child: Icon(Icons.delete)),
                     ),
                     onDismissed: (direction) {
-                      String name = itemData[index].toString();
+                      SwipeData name = itemData[index];
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text("You deleted ${name}"),
+                          content: Text("You deleted ${name.title}"),
                          action: SnackBarAction(
                            onPressed: () {
                              print("names[index] ${itemData[index].title}");
-                             itemData.insert(index, name as SwipeData);
+                             itemData.insert(index, name);
                              setState(() {});
                            },
                            label: "Undo",

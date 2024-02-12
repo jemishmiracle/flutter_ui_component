@@ -70,31 +70,6 @@ class _AnimatedSliverAppBarState extends State<AnimatedSliverAppBar> {
               },
           ),
         ),
-        // body:Container(
-        //   child: ListView.builder(
-        //     itemCount: lakeImg.length,shrinkWrap: true,
-        //     itemBuilder: (context, index) {
-        //       return Stack(
-        //         children: [
-        //           Container(height: 17.h,width: double.infinity,
-        //             decoration: BoxDecoration(
-        //                 image: DecorationImage(
-        //                     image: AssetImage(lakeImg[index].img),
-        //                     fit: BoxFit.cover,
-        //                     colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.darken)
-        //                 )
-        //             ),
-        //             child: Column(mainAxisAlignment: MainAxisAlignment.center,
-        //               children: [
-        //                 Text(lakeImg[index].title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 15.sp),),
-        //                 Text("3.30 mins walking tour",style: TextStyle(fontSize: 7.sp,color: Theme.of(context).primaryColorDark),),
-        //               ],
-        //             ),
-        //           ),
-        //         ],
-        //       );
-        //     },),
-        // ),
       ),
     );
   }

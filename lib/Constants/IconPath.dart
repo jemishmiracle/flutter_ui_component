@@ -57,4 +57,20 @@ class IconPath {
   static const tabIconImg7 = 'assets/icon/tabIcon7.png';
   static const tabIconImg8 = 'assets/icon/tabIcon8.png';
   static const tabIconImg9 = 'assets/icon/tabIcon9.png';
+  static const profileIconImg1 = 'assets/icon/profileIconImg1.png';
+  static const profileIconImg2 = 'assets/icon/profileIconImg2.png';
+  static const profileIconImg3 = 'assets/icon/profileIconImg3.png';
+  static const profileIconImg4 = 'assets/icon/profileIconImg4.png';
+  static const profileIconImg5 = 'assets/icon/profileIconImg5.png';
+  static const profileIconImg6 = 'assets/icon/profileIconImg6.png';
+  // static const tabIconImg9 = 'assets/icon/tabIcon9.png';
+  // static const tabIconImg9 = 'assets/icon/tabIcon9.png';
+  // static const tabIconImg9 = 'assets/icon/tabIcon9.png';
+  // static const tabIconImg9 = 'assets/icon/tabIcon9.png';
+  // static const tabIconImg9 = 'assets/icon/tabIcon9.png';
+  // static const tabIconImg9 = 'assets/icon/tabIcon9.png';
+  // static const tabIconImg9 = 'assets/icon/tabIcon9.png';
+  // static const tabIconImg9 = 'assets/icon/tabIcon9.png';
+  // static const tabIconImg9 = 'assets/icon/tabIcon9.png';
+  // static const tabIconImg9 = 'assets/icon/tabIcon9.png';
 }

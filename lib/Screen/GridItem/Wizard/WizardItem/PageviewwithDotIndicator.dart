@@ -13,10 +13,8 @@ class PageviewwithDotIndicator extends StatefulWidget {
 }
 
 class _PageviewwithDotIndicatorState extends State<PageviewwithDotIndicator> {
-  // PageController pageController = PageController();
   CarouselController carouselController = CarouselController();
   List pageList = [ImagePath.pageViewImg1, ImagePath.pageViewImg2, ImagePath.pageViewImg3, ImagePath.pageViewImg4, ImagePath.pageViewImg5, ImagePath.pageViewImg6,];
-
   int currentIndex = 0;
 
   @override
@@ -29,56 +27,31 @@ class _PageviewwithDotIndicatorState extends State<PageviewwithDotIndicator> {
         title: Text(widget.title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
         backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
-      body: Container(
-        child: CarouselSlider.builder(
-          itemCount: pageList.length,
-          carouselController: carouselController,
-          itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
-              Container(
-                width: double.infinity,
-                // decoration: BoxDecoration(
-                //   image: DecorationImage(
-                //     image: AssetImage(pageList[itemIndex]), fit: BoxFit.cover,
-                //   ),
-                //   borderRadius: BorderRadius.circular(2.w),
-                // ),
-                // child: button(),
-                child: Stack(
-                  children: [
-                    ClipRRect( borderRadius: BorderRadius.circular(2.w),
-                        child: Image.asset(pageList[itemIndex],fit: BoxFit.cover)),
-                    Container(
-                      width: double.infinity,
-                      child: button(),
-                    )
-                  ],
-                ),
-              ),
-          options:  CarouselOptions(
-            height:100.h,enableInfiniteScroll: true,
-            pageSnapping: true,
-            initialPage: 0,
-            onPageChanged: (index, reason) {
-              setState(() {
-                currentIndex = index;
-              });
-            },
+      body: Stack(alignment: Alignment.bottomCenter,
+        children: [
+          CarouselSlider(
+            carouselController: carouselController, // Give the controller
+            options: CarouselOptions(
+              initialPage: 0,viewportFraction: 1,
+              enableInfiniteScroll: false,
+              height:double.infinity,
+              onPageChanged:(index, reason) {
+                setState(() {currentIndex = index;});},
+            ),
+            items: pageList.map((e) {
+              return Image.asset(e,fit: BoxFit.cover,width: double.infinity,);}).toList(),),
+          Padding(padding: EdgeInsets.only(bottom: 10.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(pageList.length, (index) => Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: CircleAvatar(radius: currentIndex == index ? 5 : 2,
+                  backgroundColor: currentIndex == index ? Theme.of(context).bottomAppBarColor : Theme.of(context).primaryColorDark,),
+              )),
+            ),
           ),
-        ),
+        ],
       ),
-    );
-  }
-
-  Widget button(){
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-            onPressed: () => carouselController.previousPage(duration: Duration(milliseconds: 500)),
-            icon: Icon(Icons.arrow_back_ios,color: Theme.of(context).bottomAppBarColor,size: 5.w,)),
-        IconButton(
-            onPressed: () => carouselController.nextPage(duration: Duration(milliseconds: 500)),
-            icon: Icon(Icons.arrow_forward_ios,color: Theme.of(context).bottomAppBarColor,size: 5.w,)),
-      ],
     );
   }
 }

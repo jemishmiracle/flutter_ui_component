@@ -5,20 +5,13 @@ import 'package:flutter_ui_components/Constants/ImagePath.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-class SimplePageview extends StatefulWidget {
+class SimplePageview extends StatelessWidget {
   String title;
   SimplePageview({super.key,this.title = 'Simple Pageview'});
 
-  @override
-  State<SimplePageview> createState() => _SimplePageviewState();
-}
-
-class _SimplePageviewState extends State<SimplePageview> {
-  // PageController pageController = PageController();
   CarouselController carouselController = CarouselController();
-  List pageList = [ImagePath.pageViewImg1, ImagePath.pageViewImg2, ImagePath.pageViewImg3, ImagePath.pageViewImg4, ImagePath.pageViewImg5, ImagePath.pageViewImg6,];
 
-  int currentIndex = 0;
+  List pageList = [ImagePath.pageViewImg1, ImagePath.pageViewImg2, ImagePath.pageViewImg3, ImagePath.pageViewImg4, ImagePath.pageViewImg5, ImagePath.pageViewImg6,];
 
    @override
   Widget build(BuildContext context) {
@@ -27,43 +20,24 @@ class _SimplePageviewState extends State<SimplePageview> {
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
-        title: Text(widget.title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+        title: Text(title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
         backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
-      // body: PageView(
-      //   children: pageList,physics: BouncingScrollPhysics(
-      //   parent: AlwaysScrollableScrollPhysics()
-      // ),
-      //   controller: pageController, allowImplicitScrolling: true,
-      //   scrollDirection: Axis.horizontal,
-      //   onPageChanged: (value) {
-      //     setState(() {
-      //       currentIndex = value;
-      //     });
-      //   },
-      // ),
       body: Center(
-        child: CarouselSlider.builder(
-          itemCount: pageList.length,
+        child: CarouselSlider(
           carouselController: carouselController,
-          itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
-              Padding(
-                padding: EdgeInsets.only(right: 4.w),
-                child: Container(
-                  width: 70.w,
-                  child: ClipRRect(borderRadius: BorderRadius.circular(2.w),
-                    child: Image.asset(pageList[itemIndex],fit: BoxFit.cover,),
-                  ),
-                ),
-              ),
+           items: pageList.map((e) =>  Padding(
+             padding: EdgeInsets.only(right: 4.w),
+             child: Container(
+               width: 70.w,
+               child: ClipRRect(borderRadius: BorderRadius.circular(2.w),
+                 child: Image.asset(e,fit: BoxFit.cover,),
+               ),
+             ),
+           ),).toList(),
            options:  CarouselOptions(
-            height: 55.h,enableInfiniteScroll: false,
+            height: 55.h,enableInfiniteScroll: false,initialPage: 0,
             pageSnapping: true, viewportFraction: 0.7,
-            onPageChanged: (index, reason) {
-              setState(() {
-                currentIndex = index;
-              });
-            },
           ),
         ),
       ),
