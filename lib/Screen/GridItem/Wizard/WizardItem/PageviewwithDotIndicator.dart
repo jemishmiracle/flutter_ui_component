@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_components/Constants/ImagePath.dart';
 import 'package:get/get.dart';
@@ -12,16 +13,9 @@ class PageviewwithDotIndicator extends StatefulWidget {
 }
 
 class _PageviewwithDotIndicatorState extends State<PageviewwithDotIndicator> {
-  PageController pageController = PageController();
-  List<Widget> pageList = <Widget>[
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg1,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg2,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg3,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg4,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg5,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg6,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg7,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-  ];
+  // PageController pageController = PageController();
+  CarouselController carouselController = CarouselController();
+  List pageList = [ImagePath.pageViewImg1, ImagePath.pageViewImg2, ImagePath.pageViewImg3, ImagePath.pageViewImg4, ImagePath.pageViewImg5, ImagePath.pageViewImg6,];
 
   int currentIndex = 0;
 
@@ -35,18 +29,56 @@ class _PageviewwithDotIndicatorState extends State<PageviewwithDotIndicator> {
         title: Text(widget.title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
         backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
-      body: PageView(
-        children: pageList,physics: BouncingScrollPhysics(
-          parent: AlwaysScrollableScrollPhysics()
+      body: Container(
+        child: CarouselSlider.builder(
+          itemCount: pageList.length,
+          carouselController: carouselController,
+          itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
+              Container(
+                width: double.infinity,
+                // decoration: BoxDecoration(
+                //   image: DecorationImage(
+                //     image: AssetImage(pageList[itemIndex]), fit: BoxFit.cover,
+                //   ),
+                //   borderRadius: BorderRadius.circular(2.w),
+                // ),
+                // child: button(),
+                child: Stack(
+                  children: [
+                    ClipRRect( borderRadius: BorderRadius.circular(2.w),
+                        child: Image.asset(pageList[itemIndex],fit: BoxFit.cover)),
+                    Container(
+                      width: double.infinity,
+                      child: button(),
+                    )
+                  ],
+                ),
+              ),
+          options:  CarouselOptions(
+            height:100.h,enableInfiniteScroll: true,
+            pageSnapping: true,
+            initialPage: 0,
+            onPageChanged: (index, reason) {
+              setState(() {
+                currentIndex = index;
+              });
+            },
+          ),
+        ),
       ),
-        controller: pageController, allowImplicitScrolling: true,
-        scrollDirection: Axis.horizontal,
-        onPageChanged: (value) {
-          setState(() {
-            currentIndex = value;
-          });
-        },
-      ),
+    );
+  }
+
+  Widget button(){
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        IconButton(
+            onPressed: () => carouselController.previousPage(duration: Duration(milliseconds: 500)),
+            icon: Icon(Icons.arrow_back_ios,color: Theme.of(context).bottomAppBarColor,size: 5.w,)),
+        IconButton(
+            onPressed: () => carouselController.nextPage(duration: Duration(milliseconds: 500)),
+            icon: Icon(Icons.arrow_forward_ios,color: Theme.of(context).bottomAppBarColor,size: 5.w,)),
+      ],
     );
   }
 }

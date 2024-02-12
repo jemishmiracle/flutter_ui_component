@@ -1,3 +1,5 @@
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_components/Constants/ImagePath.dart';
 import 'package:get/get.dart';
@@ -12,16 +14,9 @@ class SimplePageview extends StatefulWidget {
 }
 
 class _SimplePageviewState extends State<SimplePageview> {
-  PageController pageController = PageController();
-  List<Widget> pageList = <Widget>[
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg1,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg2,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg3,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg4,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg5,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg6,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-    Center(child: ClipRRect(borderRadius: BorderRadius.circular(1.w),child: Image.asset(ImagePath.cityImg7,fit: BoxFit.cover,height: 50.h,width: 70.w,))),
-   ];
+  // PageController pageController = PageController();
+  CarouselController carouselController = CarouselController();
+  List pageList = [ImagePath.pageViewImg1, ImagePath.pageViewImg2, ImagePath.pageViewImg3, ImagePath.pageViewImg4, ImagePath.pageViewImg5, ImagePath.pageViewImg6,];
 
   int currentIndex = 0;
 
@@ -35,17 +30,42 @@ class _SimplePageviewState extends State<SimplePageview> {
         title: Text(widget.title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
         backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
-      body: PageView(
-        children: pageList,physics: BouncingScrollPhysics(
-        parent: AlwaysScrollableScrollPhysics()
-      ),
-        controller: pageController, allowImplicitScrolling: true,
-        scrollDirection: Axis.horizontal,
-        onPageChanged: (value) {
-          setState(() {
-            currentIndex = value;
-          });
-        },
+      // body: PageView(
+      //   children: pageList,physics: BouncingScrollPhysics(
+      //   parent: AlwaysScrollableScrollPhysics()
+      // ),
+      //   controller: pageController, allowImplicitScrolling: true,
+      //   scrollDirection: Axis.horizontal,
+      //   onPageChanged: (value) {
+      //     setState(() {
+      //       currentIndex = value;
+      //     });
+      //   },
+      // ),
+      body: Center(
+        child: CarouselSlider.builder(
+          itemCount: pageList.length,
+          carouselController: carouselController,
+          itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
+              Padding(
+                padding: EdgeInsets.only(right: 4.w),
+                child: Container(
+                  width: 70.w,
+                  child: ClipRRect(borderRadius: BorderRadius.circular(2.w),
+                    child: Image.asset(pageList[itemIndex],fit: BoxFit.cover,),
+                  ),
+                ),
+              ),
+           options:  CarouselOptions(
+            height: 55.h,enableInfiniteScroll: false,
+            pageSnapping: true, viewportFraction: 0.7,
+            onPageChanged: (index, reason) {
+              setState(() {
+                currentIndex = index;
+              });
+            },
+          ),
+        ),
       ),
     );
   }

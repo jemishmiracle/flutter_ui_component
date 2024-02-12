@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
               cardColor: Colors.grey,
               dividerColor: Colors.red,
               disabledColor: Colors.blue,
-              colorScheme: ColorScheme.light(
-                  primary: Color(0x85E98929),
-              ),
+              backgroundColor: Colors.green,
+              dialogBackgroundColor: Colors.purple,canvasColor: Color(0xff386171),
+              colorScheme: ColorScheme.light(primary: Color(0x85E98929),),
             ),
             getPages:Screens.routes,
             initialRoute: Routes.homeScreen,
