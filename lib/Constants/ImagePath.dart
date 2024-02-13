@@ -2,7 +2,7 @@
 ///  it helps to centralize all Images Path.
 
 class ImagePath{
-  static const bgimg = 'assets/Image/8.png';
+  static const bgimg = 'assets/Image/bgImage.png';
   static const bgimge1 = 'assets/Image/21.png';
   static const bgimge2 = 'assets/Image/20.png';
   static const bgimge3 = 'assets/Image/13-1.png';

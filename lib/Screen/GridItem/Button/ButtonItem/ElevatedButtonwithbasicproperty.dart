@@ -23,7 +23,7 @@ class ElevatedButtonwithbasicproperty extends StatelessWidget {
         padding:  EdgeInsets.all(2.w),
         child: Stack(
           children: [
-            Image.asset(ImagePath.bgimg,fit: BoxFit.cover,width: double.infinity,),
+            Image.asset(ImagePath.bgimg,fit: BoxFit.cover,height: double.infinity,),
             Container(
               child: Center(
                 child: Column(
@@ -31,48 +31,52 @@ class ElevatedButtonwithbasicproperty extends StatelessWidget {
                     Padding(padding: EdgeInsets.only(top: 2.w),
                       child: Row(mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                              height: 5.h,width: 35.w,
-                              child: TextButton(
-                                  onPressed: () => {},
-                                  style: ButtonStyle(
-                                    backgroundColor: MaterialStatePropertyAll(Theme.of(context).secondaryHeaderColor),
-                                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(1.w),
-                                    )),
-                                  ),
-                                  child: Text(
-                                    "FLAT BUTTON",
-                                    style: TextStyle(color: Theme.of(context).primaryColorDark),))),
+                          allButton(
+                              context: context,
+                              conWidth: 37.w,
+                              borderRadius: 1.w,
+                              text:"FLAT BUTTON",
+                              buttonColor: Theme.of(context).secondaryHeaderColor),
                           SizedBox(width: 2.w,),
-                          Container(
-                              height: 5.h,width: 38.w,
-                              child: TextButton(
-                                  onPressed: () {},
-                                  style: ButtonStyle(
-                                    backgroundColor: MaterialStatePropertyAll(Theme.of(context).secondaryHeaderColor),
-                                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(1.w),
-                                    )),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.account_balance,color: Theme.of(context).primaryColorDark,size: 4.w,),SizedBox(width: 1.w,),
-                                      Text("FLAT BUTTON",style: TextStyle(color: Theme.of(context).primaryColorDark),),
-                                    ],
-                                  ))),
+                          allButton(
+                              context: context,
+                              conWidth:38.w,
+                              text: "FLAT BUTTON",
+                              borderRadius:1.w,
+                              icon:Icons.account_balance,iconColor: Theme.of(context).primaryColorDark,
+                              buttonColor:Theme.of(context).secondaryHeaderColor),
                         ],
                       ),
                     ),
-                    Padding(padding: EdgeInsets.only(top: 2.w),
-                      child: Container(
-                        height: 5.h,width: 40.w,
-                        color: Colors.transparent,
-                        child: TextButton(
-                          onPressed: buttonenabled ? (){} :null,
-                          child: Text("DISABLE BUTTON",),
+                    // Padding(padding: EdgeInsets.only(top: 2.w),
+                    //   child: Container(
+                    //     height: 5.h,width: 40.w,
+                    //     color: Colors.transparent,
+                    //     child: TextButton(
+                    //       onPressed: buttonenabled ? (){} :null,
+                    //       child: Text("DISABLE BUTTON",),
+                    //     ),
+                    //   ),
+                    // ),
+                    Padding(
+                        padding:EdgeInsets.only(top: 2.w),
+                        child: allButton(
+                            context: context,
+                            conWidth: 48.w,
+                            text: "DISABLE BUTTON",
+                            borderRadius: 1.w,
+                            buttonColor: Theme.of(context).selectedRowColor,
                         ),
-                      ),
+                    ),
+                    Padding(
+                        padding:EdgeInsets.only(top: 2.w),
+                        child: allButton(
+                            context: context,
+                            conWidth: 46.w,
+                            text: "DISABLE BUTTON",
+                            borderRadius: 1.w, icon:Icons.account_balance,iconColor: Theme.of(context).primaryColorDark,
+                            buttonColor: Theme.of(context).selectedRowColor,
+                        ),
                     ),
                   ],
                 ),
@@ -81,6 +85,32 @@ class ElevatedButtonwithbasicproperty extends StatelessWidget {
           ],
         ),
       )
+    );
+  }
+  Widget allButton({
+    required BuildContext context,
+    required double conWidth,
+    required String text,
+    IconData? icon,
+    Color? iconColor,
+    Color? buttonColor,
+    double? borderRadius,}) {
+    return Container(
+        height: 5.h,width:conWidth,
+        child: TextButton(
+            onPressed: (){},
+            style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(buttonColor),
+              shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(borderRadius ?? 0),
+              )),
+            ),
+            child: Row(
+              children: [
+                Icon(icon,color:iconColor,size: 4.w,),SizedBox(width: 1.w,),
+                Text(text, style: TextStyle(color: Theme.of(context).primaryColorDark),),
+              ],
+            ))
     );
   }
 }

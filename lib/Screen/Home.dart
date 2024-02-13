@@ -101,10 +101,10 @@ class Home extends StatelessWidget {
                         case 17:
                           Get.toNamed(Routes.searchBarScreen);
                           break;
-                        case 15:
+                        case 18:
                           Get.toNamed(Routes.googleMapScreen);
                           break;
-                        case 16:
+                        case 19:
                           Get.toNamed(Routes.firebaseAdmobScreen);
                           break;
                         }
