@@ -37,12 +37,14 @@ class _SimpleTabBarState extends State<SimpleTabBar> with SingleTickerProviderSt
           indicatorSize: TabBarIndicatorSize.tab,
         ),
       ),
-      body: TabBarView(controller: _tabController,
-        children: [
-          tabs(ImagePath.tabImg1, "First"),
-          tabs(ImagePath.tabImg2, "Second"),
-          tabs(ImagePath.tabImg3, "Third"),
-        ],
+      body: SafeArea(
+        child: TabBarView(controller: _tabController,
+          children: [
+            tabs(ImagePath.tabImg1, "First"),
+            tabs(ImagePath.tabImg2, "Second"),
+            tabs(ImagePath.tabImg3, "Third"),
+          ],
+        ),
       ),
     );
   }

@@ -45,119 +45,121 @@ class _ProfilewithTabsState extends State<ProfilewithTabs> with SingleTickerProv
     ];
     
     return Scaffold(
-      body: NestedScrollView(
-        floatHeaderSlivers: true,scrollDirection: Axis.vertical,
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) =>
-        [ SliverAppBar(
-          expandedHeight: 46.h,
-          backgroundColor: Theme.of(context).secondaryHeaderColor,
-          leading: IconButton(
-            onPressed: () => Get.back(),
-            icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
-          flexibleSpace: FlexibleSpaceBar(
-            background: Stack(
-              children: [
-                Container(height: 38.h, color: Theme.of(context).secondaryHeaderColor,),
-                Padding(
-                  padding: EdgeInsets.only(top: 20.w),
-                  child: Align(alignment: Alignment.topCenter,
-                    child: CircleAvatar(
-                      radius: 6.h,
-                      backgroundImage: AssetImage(ImagePath.perImg5,),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:EdgeInsets.only(top: 42.w),
-                  child: Align(alignment: Alignment.topCenter,
-                      child: Text("Megan Allison",style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp),)),
-                ),
-                Padding(
-                  padding:EdgeInsets.only(top: 50.w),
-                  child: Align(alignment: Alignment.topCenter,
-                      child: Text("Traveller, Dreamer, Photographer",
-                        style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 10.sp),)),),
-                Padding(padding: EdgeInsets.only(top: 58.w,left: 2.w,right: 2.w),
-                  child: Container(
-                    height: 10.h,
-                    width: double.infinity,padding: EdgeInsets.all(2.w),
-                    child: Row(
-                      children: List.generate(profileData.length, (index) =>
-                          Padding(padding: EdgeInsets.only(left: 12.w,top: 2.w,),
-                            child: Container(child: profileData[index],),)
+      body: SafeArea(
+        child: NestedScrollView(
+          floatHeaderSlivers: true,scrollDirection: Axis.vertical,
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) =>
+          [ SliverAppBar(
+            expandedHeight: 46.h,
+            backgroundColor: Theme.of(context).secondaryHeaderColor,
+            leading: IconButton(
+              onPressed: () => Get.back(),
+              icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
+            flexibleSpace: FlexibleSpaceBar(
+              background: Stack(
+                children: [
+                  Container(height: 38.h, color: Theme.of(context).secondaryHeaderColor,),
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.w),
+                    child: Align(alignment: Alignment.topCenter,
+                      child: CircleAvatar(
+                        radius: 6.h,
+                        backgroundImage: AssetImage(ImagePath.perImg5,),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                    padding:EdgeInsets.only(top: 85.w),
-                    child: TabBar(
-                      controller: tabController,
-                      labelStyle: TextStyle(color: Theme.of(context).primaryColorDark),
-                      tabs: [Tab(text: "ABOUT",),Tab(text: "POSTS",)],
-                    ),
-                ),
-              ],),
-          ),
-          snap: true,pinned: true,floating: true,
-        ),],
-        body:TabBarView(controller: tabController,
-          children: [
-            Padding(padding:  EdgeInsets.all(3.w),
-              child: Column(
-                children: [
-                  Container(height: 31.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(1.w),
-                      boxShadow: [BoxShadow(color: Theme.of(context).shadowColor,blurRadius: 1.0,blurStyle: BlurStyle.outer)],
-                    ),
-                    child: ListView.builder(
-                        itemCount: profileTabList.length,physics: NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) {
-                          return ListTile(
-                            leading: CircleAvatar(backgroundColor: Colors.transparent,
-                                child: Image.asset(profileTabList[index].img,fit: BoxFit.cover,height: 5.w,)),
-                            title: Text(profileTabList[index].title,style: TextStyle(color: Theme.of(context).secondaryHeaderColor,fontSize: 13.sp),),
-                            subtitle: Text(profileTabList[index].text,style: TextStyle(fontSize: 11.sp),),
-                          );
-                        },
+                  Padding(
+                    padding:EdgeInsets.only(top: 42.w),
+                    child: Align(alignment: Alignment.topCenter,
+                        child: Text("Megan Allison",style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp),)),
+                  ),
+                  Padding(
+                    padding:EdgeInsets.only(top: 50.w),
+                    child: Align(alignment: Alignment.topCenter,
+                        child: Text("Traveller, Dreamer, Photographer",
+                          style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 10.sp),)),),
+                  Padding(padding: EdgeInsets.only(top: 58.w,left: 2.w,right: 2.w),
+                    child: Container(
+                      height: 10.h,
+                      width: double.infinity,padding: EdgeInsets.all(2.w),
+                      child: Row(
+                        children: List.generate(profileData.length, (index) =>
+                            Padding(padding: EdgeInsets.only(left: 12.w,top: 2.w,),
+                              child: Container(child: profileData[index],),)
+                        ),
+                      ),
                     ),
                   ),
-                  Padding(padding:EdgeInsets.only(top: 2.w),
-                    child: Container(
-                      height: 11.h,width: double.infinity,
+                  Padding(
+                      padding:EdgeInsets.only(top: 85.w),
+                      child: TabBar(
+                        controller: tabController,
+                        labelStyle: TextStyle(color: Theme.of(context).primaryColorDark),
+                        tabs: [Tab(text: "ABOUT",),Tab(text: "POSTS",)],
+                      ),
+                  ),
+                ],),
+            ),
+            snap: true,pinned: true,floating: true,
+          ),],
+          body:TabBarView(controller: tabController,
+            children: [
+              Padding(padding:  EdgeInsets.all(3.w),
+                child: Column(
+                  children: [
+                    Container(height: 31.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(1.w),
                         boxShadow: [BoxShadow(color: Theme.of(context).shadowColor,blurRadius: 1.0,blurStyle: BlurStyle.outer)],
                       ),
-                      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(padding: EdgeInsets.only(left: 5.w,top: 3.w),
-                            child: Text("Status",style: TextStyle(color: Theme.of(context).secondaryHeaderColor,fontSize: 13.sp),),
-                          ),
-                          Padding(padding:EdgeInsets.only(top: 1.w,left: 5.w),
-                            child: Text("Available",style: TextStyle(fontSize: 11.sp),),
-                          ),
-                        ],
+                      child: ListView.builder(
+                          itemCount: profileTabList.length,physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return ListTile(
+                              leading: CircleAvatar(backgroundColor: Colors.transparent,
+                                  child: Image.asset(profileTabList[index].img,fit: BoxFit.cover,height: 5.w,)),
+                              title: Text(profileTabList[index].title,style: TextStyle(color: Theme.of(context).secondaryHeaderColor,fontSize: 13.sp),),
+                              subtitle: Text(profileTabList[index].text,style: TextStyle(fontSize: 11.sp),),
+                            );
+                          },
                       ),
                     ),
-                  ),
-                ],
+                    Padding(padding:EdgeInsets.only(top: 2.w),
+                      child: Container(
+                        height: 11.h,width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(1.w),
+                          boxShadow: [BoxShadow(color: Theme.of(context).shadowColor,blurRadius: 1.0,blurStyle: BlurStyle.outer)],
+                        ),
+                        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(padding: EdgeInsets.only(left: 5.w,top: 3.w),
+                              child: Text("Status",style: TextStyle(color: Theme.of(context).secondaryHeaderColor,fontSize: 13.sp),),
+                            ),
+                            Padding(padding:EdgeInsets.only(top: 1.w,left: 5.w),
+                              child: Text("Available",style: TextStyle(fontSize: 11.sp),),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Container(
-              child: ListView.builder(
-                  itemCount: postList.length,shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                       padding:EdgeInsets.only(bottom: 7.w,left: 7.w,right: 7.w),
-                        child:post(postList[index].time, postList[index].img),
-                    );
-                  },
+              Container(
+                child: ListView.builder(
+                    itemCount: postList.length,shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                         padding:EdgeInsets.only(bottom: 7.w,left: 7.w,right: 7.w),
+                          child:post(postList[index].time, postList[index].img),
+                      );
+                    },
+                ),
               ),
-            ),
-          ],
-        )
+            ],
+          )
+        ),
       ),
     );
   }

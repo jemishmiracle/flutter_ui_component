@@ -21,25 +21,27 @@ void initState() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(alignment: Alignment.center,
-        children: [
-          Image.asset(ImagePath.tabImg7,fit: BoxFit.cover,width: double.infinity,),
-           // AnimatedContainer(
-           //     duration: Duration(seconds: 3),
-           //     child: Column(mainAxisAlignment: MainAxisAlignment.center,
-           //       children: [
-           //         Image.asset(ImagePath.dialogImg,fit: BoxFit.cover,height: 20.h,),
-           //         Text("Welcome",style: TextStyle(color: Theme.of(context).secondaryHeaderColor,fontSize: 28.sp,fontWeight: FontWeight.w600),),
-           //       ],
-           //     ),
-           // ),
-          AnimatedCrossFade(
-              firstChild: Image.asset(ImagePath.dialogImg,fit: BoxFit.cover,height: 20.h,),
-              secondChild:  Text("Welcome",style: TextStyle(color: Theme.of(context).secondaryHeaderColor,fontSize: 28.sp,fontWeight: FontWeight.w600),),
-              crossFadeState: CrossFadeState.showFirst,
-              duration:  Duration(seconds: 2),excludeBottomFocus: true,
-          )
-        ],
+      body: SafeArea(
+        child: Stack(alignment: Alignment.center,
+          children: [
+            Image.asset(ImagePath.tabImg7,fit: BoxFit.cover,width: double.infinity,),
+             // AnimatedContainer(
+             //     duration: Duration(seconds: 3),
+             //     child: Column(mainAxisAlignment: MainAxisAlignment.center,
+             //       children: [
+             //         Image.asset(ImagePath.dialogImg,fit: BoxFit.cover,height: 20.h,),
+             //         Text("Welcome",style: TextStyle(color: Theme.of(context).secondaryHeaderColor,fontSize: 28.sp,fontWeight: FontWeight.w600),),
+             //       ],
+             //     ),
+             // ),
+            AnimatedCrossFade(
+                firstChild: Image.asset(ImagePath.dialogImg,fit: BoxFit.cover,height: 20.h,),
+                secondChild:  Text("Welcome",style: TextStyle(color: Theme.of(context).secondaryHeaderColor,fontSize: 28.sp,fontWeight: FontWeight.w600),),
+                crossFadeState: CrossFadeState.showFirst,
+                duration:  Duration(seconds: 2),excludeBottomFocus: true,
+            )
+          ],
+        ),
       ),
     );
   }

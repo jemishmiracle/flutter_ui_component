@@ -57,6 +57,15 @@ class IconPath {
   static const tabIconImg7 = 'assets/icon/tabIcon7.png';
   static const tabIconImg8 = 'assets/icon/tabIcon8.png';
   static const tabIconImg9 = 'assets/icon/tabIcon9.png';
+  static const tabIconImg10 = 'assets/icon/tabIcon10.png';
+  static const tabIconImg11 = 'assets/icon/tabIcon11.png';
+  static const tabIconImg12 = 'assets/icon/tabIcon12.png';
+  static const tabIconImg13 = 'assets/icon/tabIcon13.png';
+  static const tabIconImg14 = 'assets/icon/tabIcon14.png';
+  static const tabIconImg15 = 'assets/icon/tabIcon15.png';
+  static const tabIconImg16 = 'assets/icon/tabIcon16.png';
+  static const tabIconImg17 = 'assets/icon/tabIcon17.png';
+  static const tabIconImg18 = 'assets/icon/tabIcon18.png';
   static const profileIconImg1 = 'assets/icon/profileIconImg1.png';
   static const profileIconImg2 = 'assets/icon/profileIconImg2.png';
   static const profileIconImg3 = 'assets/icon/profileIconImg3.png';
@@ -85,4 +94,20 @@ class IconPath {
   static const bottmMenuIconImg16 = 'assets/icon/bottmMenuIconImg16.png';
   static const bottmMenuIconImg17 = 'assets/icon/bottmMenuIconImg17.png';
   static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
+  // static const bottmMenuIconImg18 = 'assets/icon/bottmMenuIconImg18.png';
 }

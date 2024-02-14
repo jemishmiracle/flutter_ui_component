@@ -41,12 +41,14 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
         ),
         backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
-      body: TabBarView(controller: _tabController,
-        children: [
-          scrollTabs(ImagePath.tabImg19, 'First'),
-          scrollTabs(ImagePath.tabImg20, 'Second'),
-          scrollTabs(ImagePath.tabImg21, 'Third'),
-        ],
+      body: SafeArea(
+        child: TabBarView(controller: _tabController,
+          children: [
+            scrollTabs(ImagePath.tabImg19, 'First'),
+            scrollTabs(ImagePath.tabImg20, 'Second'),
+            scrollTabs(ImagePath.tabImg21, 'Third'),
+          ],
+        ),
       ),
     );
   }

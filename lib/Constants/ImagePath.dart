@@ -188,7 +188,7 @@ class ImagePath{
   static const pageViewImg5 = 'assets/Image/pageviewImg5.png';
   static const pageViewImg6 = 'assets/Image/pageviewImg6.png';
   static const bgImg2 = 'assets/Image/bgImg1.png';
-  // static const sliverImg = 'assets/Image/sliverImg.png';
+  static const buttonbgImg = 'assets/Image/buttonbgImg.png';
   // static const sliverImg = 'assets/Image/sliverImg.png';
   // static const sliverImg = 'assets/Image/sliverImg.png';
   // static const sliverImg = 'assets/Image/sliverImg.png';

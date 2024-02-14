@@ -40,13 +40,15 @@ class _IconWithTextTabBarState extends State<IconWithTextTabBar> with SingleTick
           indicatorSize: TabBarIndicatorSize.tab,
         ),
       ),
-      body: TabBarView(controller: _tabController,
-      children: [
-        scrollTabs(ImagePath.tabImg13, 'First'),
-        scrollTabs(ImagePath.tabImg14, 'Second'),
-        scrollTabs(ImagePath.tabImg15, 'Third'),
-      ],
-     ),
+      body: SafeArea(
+        child: TabBarView(controller: _tabController,
+        children: [
+          scrollTabs(ImagePath.tabImg13, 'First'),
+          scrollTabs(ImagePath.tabImg14, 'Second'),
+          scrollTabs(ImagePath.tabImg15, 'Third'),
+        ],
+             ),
+      ),
     );
   }
 

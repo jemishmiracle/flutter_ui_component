@@ -5,12 +5,12 @@ import 'package:flutter_ui_components/Screen/GridItem/Bottom%20Menu/BottomMenuIt
 import 'package:flutter_ui_components/Screen/GridItem/Bottom%20Menu/BottomMenuItem/MaterialBottomNavigation.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Bottom%20Menu/BottomMenuItem/SimpleBottomNavigation.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Bottom%20Menu/BottomMenuPage.dart';
-import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/DropdownButton.dart';
-import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/ElevatedButton.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/DropdownButtonPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/ElevatedButtonPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/ElevatedButtonwithbasicproperty.dart';
-import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/FloatingActionbutton.dart';
-import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/IconButton.dart';
-import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/OutlineButton.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/FloatingActionbuttonPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/IconButtonPage.dart';
+import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/OutlineButtonPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonItem/SelectionControl.dart';
 import 'package:flutter_ui_components/Screen/GridItem/Button/ButtonsPage.dart';
 import 'package:flutter_ui_components/Screen/GridItem/ChipsGalleryPage.dart';
@@ -127,11 +127,11 @@ class Screens{
     GetPage(name: Routes.simpleBottomBarScreen, page: () => SimpleBottomBar()),
     GetPage(name: Routes.titledBottomBarScreen, page: () => TitledBottomBar()),
     GetPage(name: Routes.elevatedButtonwithbasicpropertyScreen, page: () => ElevatedButtonwithbasicproperty()),
-    GetPage(name: Routes.elevatedButtonScreen, page: () => ElevatedButton()),
-    GetPage(name: Routes.outlineButtonScreen, page: () => OutlineButton()),
-    GetPage(name: Routes.floatingActionbuttonScreen, page: () => FloatingActionbutton()),
-    GetPage(name: Routes.iconButtonScreen, page: () => IconButton()),
-    GetPage(name: Routes.dropdownButtonScreen, page: () => DropdownButton()),
+    GetPage(name: Routes.elevatedButtonScreen, page: () => ElevatedButtonPage()),
+    GetPage(name: Routes.outlineButtonScreen, page: () => OutlineButtonPage()),
+    GetPage(name: Routes.floatingActionbuttonScreen, page: () => FloatingActionbuttonPage()),
+    GetPage(name: Routes.iconButtonScreen, page: () => IconButtonPage()),
+    GetPage(name: Routes.dropdownButtonScreen, page: () => DropdownButtonPage()),
     GetPage(name: Routes.selectionControlScreen, page: () => SelectionControl()),
     GetPage(name: Routes.simpleProfileScreen, page: () => SimpleProfile()),
     GetPage(name: Routes.profilewithTabsScreen, page: () => ProfilewithTabs()),

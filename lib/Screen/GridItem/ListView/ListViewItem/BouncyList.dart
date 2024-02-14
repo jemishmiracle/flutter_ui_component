@@ -30,31 +30,33 @@ class BouncyList extends StatelessWidget {
         title: Text(title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
         backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
-      body: Container(
-        child: ListView.builder(
-          itemCount: lakeImg.length,
-            itemBuilder: (context, index) {
-              return Container(
-                child: Padding(
-                  padding: EdgeInsets.only(bottom: 1.w),
-                  child: Container(height: 17.h,width: double.infinity,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(lakeImg[index].img),
-                            fit: BoxFit.cover,
-                            colorFilter: ColorFilter.mode(Theme.of(context).bottomAppBarColor.withOpacity(0.6), BlendMode.darken)
-                        )
-                    ),
-                    child: Column(mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(lakeImg[index].title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 15.sp),),
-                        Text("3.30 mins walking tour",style: TextStyle(fontSize: 7.sp,color: Theme.of(context).primaryColorDark),),
-                      ],
+      body: SafeArea(
+        child: Container(
+          child: ListView.builder(
+            itemCount: lakeImg.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 1.w),
+                    child: Container(height: 17.h,width: double.infinity,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(lakeImg[index].img),
+                              fit: BoxFit.cover,
+                              colorFilter: ColorFilter.mode(Theme.of(context).bottomAppBarColor.withOpacity(0.6), BlendMode.darken)
+                          )
+                      ),
+                      child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(lakeImg[index].title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 15.sp),),
+                          Text("3.30 mins walking tour",style: TextStyle(fontSize: 7.sp,color: Theme.of(context).primaryColorDark),),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              );
-            },),
+                );
+              },),
+        ),
       ),
     );
   }

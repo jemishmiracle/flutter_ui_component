@@ -64,27 +64,29 @@ class _SimpleNavigationDrawerState extends State<SimpleNavigationDrawer> {
            ],
         ),
       ),
-      body: Stack(
-        children: [
-          Container(
-            height: double.infinity,width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(2.w),
-                image: DecorationImage(
-                    image: AssetImage(ImagePath.bgimge8),
-                    fit: BoxFit.cover,
-                    colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.darken)
-                )
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Container(
+              height: double.infinity,width: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(2.w),
+                  image: DecorationImage(
+                      image: AssetImage(ImagePath.bgimge8),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.darken)
+                  )
+              ),
+              child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Image.asset(data[index].icon,fit: BoxFit.cover,height: 6.w,),
+                  Icon(Icons.home),
+                  Text("Home",style: TextStyle(color: Theme.of(context).primaryColorDark,fontWeight: FontWeight.bold),),
+                ],
+              ),
             ),
-            child: Column(mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Image.asset(data[index].icon,fit: BoxFit.cover,height: 6.w,),
-                Icon(Icons.home),
-                Text("Home",style: TextStyle(color: Theme.of(context).primaryColorDark,fontWeight: FontWeight.bold),),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

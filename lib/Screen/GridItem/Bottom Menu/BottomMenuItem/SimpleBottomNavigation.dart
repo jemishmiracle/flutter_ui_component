@@ -34,7 +34,7 @@ class _SimpleBottomNavigationState extends State<SimpleBottomNavigation> {
         title: Text(widget.title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
         backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
-      body: widgetOptions.elementAt(selectedIndex),
+      body: SafeArea(child: widgetOptions.elementAt(selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(

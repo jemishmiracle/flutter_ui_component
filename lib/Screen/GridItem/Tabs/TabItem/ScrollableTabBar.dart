@@ -36,18 +36,20 @@ class _ScrollableTabBarState extends State<ScrollableTabBar> with SingleTickerPr
           indicatorSize: TabBarIndicatorSize.tab,
         ),
       ),
-      body: TabBarView(controller: _tabController,
-        children: [
-          scrollTabs(ImagePath.tabImg4, 'First'),
-          scrollTabs(ImagePath.tabImg5, 'Second'),
-          scrollTabs(ImagePath.tabImg6, 'Third'),
-          scrollTabs(ImagePath.tabImg7, 'Four'),
-          scrollTabs(ImagePath.tabImg8, 'Five'),
-          scrollTabs(ImagePath.tabImg9, 'Six'),
-          scrollTabs(ImagePath.tabImg10, 'Seven'),
-          scrollTabs(ImagePath.tabImg11, 'Eight'),
-          scrollTabs(ImagePath.tabImg12, 'Nine'),
-        ],
+      body: SafeArea(
+        child: TabBarView(controller: _tabController,
+          children: [
+            scrollTabs(ImagePath.tabImg4, 'First'),
+            scrollTabs(ImagePath.tabImg5, 'Second'),
+            scrollTabs(ImagePath.tabImg6, 'Third'),
+            scrollTabs(ImagePath.tabImg7, 'Four'),
+            scrollTabs(ImagePath.tabImg8, 'Five'),
+            scrollTabs(ImagePath.tabImg9, 'Six'),
+            scrollTabs(ImagePath.tabImg10, 'Seven'),
+            scrollTabs(ImagePath.tabImg11, 'Eight'),
+            scrollTabs(ImagePath.tabImg12, 'Nine'),
+          ],
+        ),
       ),
     );
   }

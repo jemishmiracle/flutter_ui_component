@@ -43,16 +43,18 @@ class _ExpandableListState extends State<ExpandableList> {
         title: Text(widget.title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
         backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
-      body: SingleChildScrollView(
-        child: Container(padding: EdgeInsets.all(3.w),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              lakePichola1(ImagePath.lakeImg1,"Lake Pichola", subtext, Icons.keyboard_arrow_up_outlined, Icons.keyboard_arrow_down_outlined,),
-              SizedBox(height: 2.h,),
-              lakePichola("Lake Pichola"),
-              SizedBox(height: 2.h,),
-              subList("Sublist", Icons.keyboard_arrow_up_outlined, Icons.keyboard_arrow_down_outlined, sublist,),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(padding: EdgeInsets.all(3.w),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                lakePichola1(ImagePath.lakeImg1,"Lake Pichola", subtext, Icons.keyboard_arrow_up_outlined, Icons.keyboard_arrow_down_outlined,),
+                SizedBox(height: 2.h,),
+                lakePichola("Lake Pichola"),
+                SizedBox(height: 2.h,),
+                subList("Sublist", Icons.keyboard_arrow_up_outlined, Icons.keyboard_arrow_down_outlined, sublist,),
+              ],
+            ),
           ),
         ),
       ),

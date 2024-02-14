@@ -40,12 +40,14 @@ class _IconTabBarState extends State<IconTabBar> with SingleTickerProviderStateM
           indicatorSize: TabBarIndicatorSize.tab,
         ),
       ),
-      body: TabBarView(controller: _tabController,
-        children: [
-          scrollTabs(ImagePath.tabImg16, 'First'),
-          scrollTabs(ImagePath.tabImg17, 'Second'),
-          scrollTabs(ImagePath.tabImg18, 'Third'),
-        ],
+      body: SafeArea(
+        child: TabBarView(controller: _tabController,
+          children: [
+            scrollTabs(ImagePath.tabImg16, 'First'),
+            scrollTabs(ImagePath.tabImg17, 'Second'),
+            scrollTabs(ImagePath.tabImg18, 'Third'),
+          ],
+        ),
       ),
     );
   }

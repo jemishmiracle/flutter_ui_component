@@ -28,8 +28,10 @@ class _AnimatedBottomNavigationState extends State<AnimatedBottomNavigation> {
         title: Text(widget.title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
         backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
-      body: Center(
-        child: Text("Animated Bottom Bar."),
+      body: SafeArea(
+        child: Center(
+          child: Text("Animated Bottom Bar."),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[

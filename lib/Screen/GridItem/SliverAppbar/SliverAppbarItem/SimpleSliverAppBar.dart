@@ -51,25 +51,27 @@ class SimpleSliverAppBar extends StatelessWidget {
         "seeing a nightmare. Mahmud however proceeds to pillage the city.";
 
     return Scaffold(
-      body: NestedScrollView(
-        floatHeaderSlivers: true,scrollDirection: Axis.vertical,
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) =>
-       [ SliverAppBar(
-          expandedHeight: 35.h,
-         backgroundColor: Theme.of(context).secondaryHeaderColor,
-         leading: IconButton(
-           onPressed: () => Get.back(),
-           icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
-         flexibleSpace: FlexibleSpaceBar(
-           title: Text(title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
-           background: Image.asset(ImagePath.cityImg,fit: BoxFit.cover,),
-         ),
-         snap: true,pinned: true,floating: true,
-        ),],
-        body:SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.all(2.w),
-            child: Text(agraDetails,style: TextStyle(color: Colors.black),),
+      body: SafeArea(
+        child: NestedScrollView(
+          floatHeaderSlivers: true,scrollDirection: Axis.vertical,
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) =>
+         [ SliverAppBar(
+            expandedHeight: 35.h,
+           backgroundColor: Theme.of(context).secondaryHeaderColor,
+           leading: IconButton(
+             onPressed: () => Get.back(),
+             icon: Icon(Icons.arrow_back,color: Theme.of(context).primaryColorDark,),),
+           flexibleSpace: FlexibleSpaceBar(
+             title: Text(title,style: TextStyle(color: Theme.of(context).primaryColorDark,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+             background: Image.asset(ImagePath.cityImg,fit: BoxFit.cover,),
+           ),
+           snap: true,pinned: true,floating: true,
+          ),],
+          body:SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(2.w),
+              child: Text(agraDetails,style: TextStyle(color: Colors.black),),
+            ),
           ),
         ),
       ),
